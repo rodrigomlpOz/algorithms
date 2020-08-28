@@ -1,4 +1,4 @@
-def minPathSum(self, grid):
+def minPathSum(grid):
     if not grid:
         return 
     r, c = len(grid), len(grid[0])
