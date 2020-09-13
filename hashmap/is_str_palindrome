@@ -1,0 +1,8 @@
+import collections
+def can_palindrome(word):
+    return sum(v%2 for v in collections.Counter(word).values() % 2) <= 1
+
+
+str = "edified"
+ans = can_palindrome(str)
+print(ans)
