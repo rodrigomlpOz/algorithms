@@ -8,6 +8,7 @@ def generate_paren(n):
     def recurse(open, close, n, temp, ans):
         if len(temp) == 2*n:
             ans.append(''.join(temp[:]))
+        
         if open < n:
             temp.append("(")
 

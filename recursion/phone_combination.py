@@ -6,26 +6,20 @@ Output:
   ["a","a","b"]
 ]
 '''
-def letter_combination(phone):
-    letters = {"1":"1", "2":"abc","3":"def", "4":"ghi", "5":"jkl", "6":"mno", "7":"pqrs", "8":"tuv", "9":"wxyz"}
-    temp = []
-    ans = []
-    def recurse(letters, phone, temp, ans, pos):
-        if len(temp) == len(phone):
-            ans.append(''.join(temp[:]))
+def first_ocurrunce(arr, k):
+    l = 0
+    h = len(arr)-1
+    while l <= h:
+        mid = (h+l)//2
+        if mid == 0 or (arr[mid] == k and arr[mid-1] != arr[mid]):
+            return mid
+        elif arr[mid] < k:
+            l = mid
         else:
-            for letter in letters[phone[pos]]:
-                temp.append(letter)
+            h = mid
+    return
 
-                recurse(letters, phone, temp, ans, pos+1)
-
-                temp.pop()
-    recurse(letters, phone, temp, ans, 0)
-
-            
-
-    
-
-phone = "23"
-letter_combination(phone)
-print('hello')
+arr = [-14, -10, 2, 108, 108, 243, 285, 285, 285, 401]
+arr1 = [285]
+k = 1
+first_ocurrunce(arr1, k)
