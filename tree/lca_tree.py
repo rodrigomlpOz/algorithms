@@ -29,7 +29,7 @@ def tree_lca(root, p, q):
             count_nodes = (1 if root == p or root == q else 0) + (left[0] if left[0] is not None else 0) + (right[0] if right[0] is not None else 0)
             found_lca = (True if count_nodes == 2 else None)
             return (count_nodes, root if found_lca else None)
-    result = is_lca(root, p, q)[0] 
+    result = is_lca(root, p, q)[1] 
     return result  
       
 
