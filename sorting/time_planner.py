@@ -5,11 +5,9 @@ def meeting_planner(slotsA, slotsB, dur):
   while i < len(slotsA) and j < len(slotsB):
     start = max(slotsA[i][0], slotsB[j][0])
     end = min(slotsA[i][1], slotsB[j][1])
-    interval = [max(slotsA[i][0], slotsB[j][0]), min(slotsA[i][1], slotsB[j][1])]
-    size_interval = interval[1] - interval[0]
     #Check if interval >= dur
-    if size_interval >= dur:
-        return [interval[0], interval[0] + dur]#return [start_interval, start_interval + 
+    if (start + dur) <= end:
+        return [start, start + dur]#return [start_interval, start_interval + 
     
     #increment interval
     if slotsA[i][1] < slotsB[j][1]:
