@@ -1,25 +1,26 @@
-'''
-Input: "aab"
-Output:
-[
-  ["aa","b"],
-  ["a","a","b"]
-]
-'''
-def first_ocurrunce(arr, k):
-    l = 0
-    h = len(arr)-1
-    while l <= h:
-        mid = (h+l)//2
-        if mid == 0 or (arr[mid] == k and arr[mid-1] != arr[mid]):
-            return mid
-        elif arr[mid] < k:
-            l = mid
-        else:
-            h = mid
-    return
+class Solution:
+    def letterCombinations(self, digits):
+        """
+        :type digits: str
+        :rtype: List[str]
+        """
+        def backtrack(result, temp, dic, digits, index):
+            if len(temp) == len(digits):
+                result.append(''.join(temp[:]))
+            else:
+                for char in dic[digits[index]]:
+                    #choose
+                    temp.append(char)
 
-arr = [-14, -10, 2, 108, 108, 243, 285, 285, 285, 401]
-arr1 = [285]
-k = 1
-first_ocurrunce(arr1, k)
+                    #explore
+                    backtrack(result, temp, dic, digits, index + 1)
+
+                    #undo
+                    temp.pop()
+        if not digits:
+            return []
+        dic = {"0":"0", "1":"1", "2": "abc", "3": "def", "4": "ghi", "5":"jkl", "6":"mno", "7":"pqrs", "8":"tuv", "9":"wxyz"}
+        result = []
+        backtrack(result, [], dic, digits, 0)
+        return result
+
