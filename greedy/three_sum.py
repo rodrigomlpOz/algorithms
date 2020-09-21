@@ -1,13 +1,24 @@
 
 import collections
-def minimize_waiting(arr):
+def three_sum(arr, s):
+    n = len(arr)
+    if n < 3:
+        return []
     arr.sort()
-    ans = 0
-    for i, val in enumerate(arr):
-        service_time = len(arr) - (i + 1)
-        ans += (service_time * val)
-    return ans
-
-arr = [2, 5, 1, 3]
-result = minimize_waiting(arr)
+    for i in range(len(arr)-2):
+            r = s - arr[i]
+            l = i+1
+            h = n - 1
+            while l < h:
+                if (arr[l] + arr[h] < r):
+                    l += 1
+                elif (arr[l] + arr[h] > r):
+                    h -= 1
+                else:
+                    return [arr[i], arr[l], arr[h]]
+    return []
+arr = [2, 7, 4, 0, 9, 5, 1, 3]
+s = 16
+result = three_sum(arr, s)
 print(result)
+
