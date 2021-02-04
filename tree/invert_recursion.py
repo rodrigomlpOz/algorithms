@@ -14,7 +14,9 @@ class TreeNode:
         self.right = None
 def invert_tree(root):
     def invertTree(root):
-        if root:
+        if not root:
+            return
+        else:
             root.left =  invertTree(root.right)
             root.right = invertTree(root.left)
             return root
