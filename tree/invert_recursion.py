@@ -13,15 +13,15 @@ class TreeNode:
         self.val = val 
         self.left = None
         self.right = None
-def invert_tree(root):
-    def invertTree(root):
-        if not root:
-            return
-        else:
-            root.left =  invertTree(root.right)
-            root.right = invertTree(root.left)
-            return root
-      
+
+def invertTree(root):
+    if not root:
+        return None
+    else:
+        root.left =  invertTree(root.right)
+        root.right = invertTree(root.left)
+        return root
+
 
 root = TreeNode(1)
 root.left = TreeNode(2)
