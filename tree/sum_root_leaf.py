@@ -13,3 +13,4 @@ def sum_root_to_leaf(tree):
         # Non-leaf.
         return (sum_root_to_leaf_helper(tree.left, partial_path_sum) +
                 sum_root_to_leaf_helper(tree.right, partial_path_sum))
+    sum_root_to_leaf_helper(tree, partial_path_sum=0)
