@@ -1,6 +1,6 @@
 '''
 
-PROBLEM STATEMENT: 9.3 EPI
+PROBLEM STATEMENT: 9.2 EPI
 
     1
    / \
