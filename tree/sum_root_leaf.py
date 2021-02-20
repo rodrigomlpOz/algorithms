@@ -1,5 +1,5 @@
 '''
-PROBLEM STATEMENT: 9.5 on EPI
+PROBLEM STATEMENT: 9.5 on EPI p.119
 '''
 
 def sum_root_to_leaf(tree):
