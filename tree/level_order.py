@@ -7,7 +7,7 @@ class TreeNode:
 
 from collections import deque
 
-def levelOrder(root):
+def levelOrder(self, root):
         """
         :type root: TreeNode
         :rtype: List[List[int]]
