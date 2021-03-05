@@ -6,8 +6,8 @@ class TreeNode:
         self.right = None
 
 from collections import deque
-class Solution:
-    def levelOrder(self, root):
+
+def levelOrder(self, root):
         """
         :type root: TreeNode
         :rtype: List[List[int]]
