@@ -14,7 +14,7 @@ class TreeNode:
         self.left = None
         self.right = None
 def invert_tree(root):
-    queue = collections.deque([(root)])
+    queue = collections.deque([root])
     while queue:
         node = queue.popleft()
         if node:
