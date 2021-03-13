@@ -12,7 +12,7 @@ def binary_tree_from_preorder_inorder(preorder, inorder):
 
         root_inorder_idx = node_to_inorder_idx[preorder[preorder_start]]
         left_subtree_size = root_inorder_idx - inorder_start
-        return BinaryTreeNode(
+        return TreeNode(
             preorder[preorder_start],
             # Recursively builds the left subtree.
             binary_tree_from_preorder_inorder_helper(
