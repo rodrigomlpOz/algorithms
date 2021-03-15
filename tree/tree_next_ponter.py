@@ -1,4 +1,4 @@
-# Definition for binary tree with next pointer.
+# EPI 9.16
 class TreeLinkNode:
      def __init__(self, x):
         self.val = x
