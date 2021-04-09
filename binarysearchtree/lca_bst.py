@@ -1,4 +1,4 @@
-# Input nodes are nonempty and the key at s is less than or equal to that at b.
+# EPI 14.4 
 def find_lca(tree, s, b):
 
     while tree.data < s.data or tree.data > b.data:
