@@ -1,5 +1,11 @@
 #EPI 14.5
-
+class BinaryTreeNode:
+    def __init__(self, data=None, left=None, right=None, size=None):
+        self.data = data
+        self.left = left
+        self.right = right
+        self.size = size
+        
 def rebuild_bst_from_preorder(preorder_sequence):
 
     if not preorder_sequence:
