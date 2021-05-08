@@ -18,12 +18,12 @@ class LinkedList:
   
     # Function to reverse the linked list 
     def reverse(self): 
-        prev = None
+        prev_node = None
         current_node = self.head 
         while(current_node is not None): 
             next_node = current_node.next
-            current_node.next = prev 
-            prev = current_node 
+            current_node.next = prev_node
+            prev_node = current_node 
             current_node = next_node
         self.head = prev 
           
