@@ -19,12 +19,12 @@ class LinkedList:
     # Function to reverse the linked list 
     def reverse(self): 
         prev = None
-        current = self.head 
-        while(current is not None): 
-            next = current.next
-            current.next = prev 
-            prev = current 
-            current = next
+        current_node = self.head 
+        while(current_node is not None): 
+            next_node = current_node.next
+            current_node.next = prev 
+            prev = current_node 
+            current_node = next_node
         self.head = prev 
           
     # Function to insert a new node at the beginning 
