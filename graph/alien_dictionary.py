@@ -18,7 +18,6 @@ class Solution(object):
         graph = {}
         for i in range(len(words)-1):
             w1, w2 = words[i], words[i+1]
-        self.add_vertices(words[-1], graph)
         return graph
 
     def topo_dfs(self, x, graph, visited, visiting, ans): # Return True if there is a cycle
