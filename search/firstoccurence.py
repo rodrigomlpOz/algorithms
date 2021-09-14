@@ -1,17 +1,33 @@
 #https://www.techiedelight.com/find-first-or-last-occurrence-of-a-given-number-sorted-array/
-def first_ocurrunce(arr, k):
-    l = 0
-    h = len(arr)-1
-    while l <= h:
-        mid = (h+l)//2
-        if arr[mid] == k and (mid == 0 and arr[mid-1] != arr[mid]):
-            return mid
-        elif arr[mid] < k:
-            l = mid + 1
+# Function to find the first occurrence of a given number
+# in a sorted list of integers
+def findFirstOccurrence(A, x):
+ 
+    # search space is `A[left…right]`
+    (left, right) = (0, len(A) - 1)
+ 
+    # initialize the result by -1
+    result = -1
+ 
+    # loop till the search space is exhausted
+    while left <= right:
+ 
+        # find the mid-value in the search space and compares it with the target
+        mid = (left + right) // 2
+ 
+        # if the key is located, update the result and
+        # search towards the left (lower indices)
+        if x == A[mid]:
+            result = mid
+            right = mid - 1
+ 
+        # if the key is less than the middle element, discard the right half
+        elif x < A[mid]:
+            right = mid - 1
+ 
+        # if the key is more than the middle element, discard the left half
         else:
-            h = mid
-    return -1
-
-arr = [0, 1]
-ans = first_ocurrunce(arr, 1)
-print(arr)
+            left = mid + 1
+ 
+    # return the leftmost index, or -1 if the element is not found
+    return resul
