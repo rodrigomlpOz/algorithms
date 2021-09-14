@@ -30,4 +30,4 @@ def findFirstOccurrence(A, x):
             left = mid + 1
  
     # return the leftmost index, or -1 if the element is not found
-    return resul
+    return result
