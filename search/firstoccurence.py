@@ -1,3 +1,4 @@
+#https://www.techiedelight.com/find-first-or-last-occurrence-of-a-given-number-sorted-array/
 def first_ocurrunce(arr, k):
     l = 0
     h = len(arr)-1
