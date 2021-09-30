@@ -1,5 +1,5 @@
 '''
-https://leetcode.com/problems/flatten-2d-vector/
+https://aaronice.gitbook.io/lintcode/data_structure/flatten-2d-vector
 '''
 class Vector2D:
 
