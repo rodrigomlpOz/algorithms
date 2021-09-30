@@ -1,3 +1,6 @@
+'''
+https://leetcode.com/problems/alien-dictionary/
+'''
 class Solution(object):
     def add_vertices(self, w, graph):
         for ch in w:
