@@ -1,3 +1,7 @@
+'''
+https://leetcode.com/problems/increasing-triplet-subsequence/
+'''
+
 def increasingTriplet(self, nums):
         """
         :type nums: List[int]
