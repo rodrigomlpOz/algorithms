@@ -1,3 +1,8 @@
+'''
+Find duplicates
+https://leetcode.com/problems/game-of-life/
+'''
+
 DEAD = 0
 ALIVE = 1
 ALIVE_TO_DEAD = 2
