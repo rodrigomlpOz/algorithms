@@ -1,3 +1,7 @@
+'''
+EPI 6.4
+'''
+
 def replace_and_remove(s):
     size = len(s)
         # Forward iteration: remove 'b's and count the number of 'a's.
