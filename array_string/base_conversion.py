@@ -1,3 +1,7 @@
+'''
+EPI 6.2
+'''
+
 import string
 def base_conversion(num, b1, b2):
     def convert_to_decimal(num, b1):
