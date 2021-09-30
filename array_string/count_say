@@ -1,3 +1,7 @@
+'''
+EPI 6.8
+'''
+
 def count_say(n):
     def next_say(s):
         result, i = [], 0
