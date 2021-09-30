@@ -1,3 +1,6 @@
+'''
+https://leetcode.com/problems/course-schedule/
+'''
 import collections
 def has_cycle(graph,node, visiting, visited):
     if node in visiting:
