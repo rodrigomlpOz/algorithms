@@ -1,3 +1,6 @@
+'''
+https://leetcode.com/problems/is-graph-bipartite/
+'''
 import collections
 def isBipartite(graph):
     color = {}
