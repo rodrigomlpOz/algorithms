@@ -1,3 +1,8 @@
+'''
+Problem:
+https://www.geeksforgeeks.org/write-your-own-atoi/
+'''
+
 def myAtoi(str):
         """
         :type str: str
