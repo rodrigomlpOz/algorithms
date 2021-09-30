@@ -1,3 +1,7 @@
+'''
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+'''
+
 def buy_and_sell_stock_once(prices):
 
     min_price_so_far, max_profit = float('inf'), 0.0
