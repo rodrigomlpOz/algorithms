@@ -1,3 +1,8 @@
+'''
+Read all solutions to this problem, very creative ways to solve it
+
+https://leetcode.com/problems/find-the-duplicate-number/solution/
+'''
 def findDuplicate(nums):
         tortoise = hare = nums[0]
         while True:
