@@ -1,5 +1,5 @@
 '''
-Find duplicates
+GAME OF LIFE
 https://leetcode.com/problems/game-of-life/
 '''
 
