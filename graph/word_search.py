@@ -1,4 +1,4 @@
-#leetcode problem 79
+#leetcode https://leetcode.com/problems/word-search/
 def word_search(board, word):
     def dfs(board, word, x, y):
         if not word:
