@@ -1,3 +1,6 @@
+'''
+EPI 18.2
+'''
 def paint(maze, x, y):
     def paint_path(maze, x, y, color):
         if not (0<=x<len(maze) and 0<=y<len(maze[0]) and  maze[x][y] == color):
