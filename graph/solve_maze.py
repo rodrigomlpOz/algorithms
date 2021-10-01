@@ -1,3 +1,4 @@
+#EPI 18.1
 def maze_solve(maze, e):
     def find_path(maze, x, y, e, path, visited):
         if not (0<=x<len(maze) and 0<=y<len(maze[0]) and (x,y) not in visited and maze[x][y] == 0):
