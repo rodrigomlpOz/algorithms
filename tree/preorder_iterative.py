@@ -17,21 +17,24 @@ class TreeNode:
         self.right = None
 def preorder_iterative(root):
     stack = []
-    result = []
+    ans = []
 
     if not root:
-        return result
+        return ans
 
     curr_node = root
-    while stack or curr_node:
+    prev_node = None 
+
+    while  stack or  curr_node:
         if curr_node:
+            ans.append(curr_node.val)
             stack.append(curr_node)
-            curr_node = curr_node.left
+            curr_node = curr_node.left 
         else:
-            curr_node = stack.pop()
-            result.append(curr_node.val)
-            curr_node = curr_node.right
-    return result
+            prev_node = stack.pop()
+            curr_node = prev_node.right
+
+    print(ans)
 
 root = TreeNode(0)
 root.left = TreeNode(-3)
