@@ -1,5 +1,7 @@
 # Recursive Python3 program to reverse 
 # a linked list 
+
+#hint -> you return the new_head in the recursion and do temp.next.next = temp for reversing pointer
 import math 
   
 # Link list node  
