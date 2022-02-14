@@ -1,4 +1,4 @@
-# Assumes L has at least k nodes, deletes the k-th last node in L.
+# Adds list values
 def add_list(L1, L2):
     place_iter = dummy_head = ListNode()
     carry = 0
