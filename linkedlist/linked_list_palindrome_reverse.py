@@ -1,3 +1,6 @@
+'''
+413 + 907 = 1320
+'''
 class Solution:
 
     def isPalindrome(self, head: ListNode) -> bool:
