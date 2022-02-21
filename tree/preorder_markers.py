@@ -1,6 +1,6 @@
 def reconstruct_preorder(preorder):
     def reconstruct_preorder_helper(preorder_iter):
-        subtree_key = next(preorder_iter)
+        subtree_key = next(preorder_iter, None)
         if subtree_key is None:
             return None
 
