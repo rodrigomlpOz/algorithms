@@ -16,11 +16,18 @@ class TreeNode:
 
 def invertTree(root):
     if not root:
-         return None
-    left = invertTree(root.left)
-    right =  invertTree(root.right)
-    root.left, root.right = right, left
-    return root
+        return None
+    else:
+        #swap left and right subtrees
+        root.left,root.right = root.right,root.left
+
+        #recursively solve the problem
+        if root.left:
+            invertTree(root.left)
+        if root.right:
+            invertTree(root.right)
+
+        return root
 
 
 root = TreeNode(1)
