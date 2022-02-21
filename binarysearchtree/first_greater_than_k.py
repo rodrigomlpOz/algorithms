@@ -1,7 +1,7 @@
 #EPI 14.2
 
 def find_first_greater_than_k(tree, k):
-
+    #look for the leftmost node to the right of k
     subtree, first_so_far = tree, None
     while subtree:
         if subtree.data > k:
