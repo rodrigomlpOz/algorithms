@@ -18,7 +18,9 @@ def invert_tree(root):
     while queue:
         node = queue.popleft()
         if node:
+            #swap
             node.left, node.right = node.right, node.left
+            #'recursively' solve the problem
             queue.append(node.left)
             queue.append(node.right)
     return root
