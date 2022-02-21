@@ -22,10 +22,8 @@ def invertTree(root):
         root.left,root.right = root.right,root.left
 
         #recursively solve the problem
-        if root.left:
-            invertTree(root.left)
-        if root.right:
-            invertTree(root.right)
+        invertTree(root.left)
+        invertTree(root.right)
 
         return root
 
