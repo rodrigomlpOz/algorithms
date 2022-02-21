@@ -4,7 +4,7 @@ https://leetcode.com/problems/binary-tree-maximum-path-sum/
 Comments:
 https://leetcode.com/problems/binary-tree-maximum-path-sum/discuss/603423/Python-Recursion-stack-thinking-process-diagram
 '''
-def maxPathSum(self, root: TreeNode) -> int:
+def maxPathSum(root):
  		max_path = float("-inf") # placeholder to be updated
  		def get_max_gain(node):
  			nonlocal max_path # This tells that max_path is not a local variable
