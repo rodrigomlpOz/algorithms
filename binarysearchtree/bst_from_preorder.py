@@ -10,7 +10,7 @@ def bstFromPreorder(preorder_sequence):
 
     if not preorder:
             return None
-    root = TreeNode(preorder[0])
+    root = BinaryTreeNode(preorder[0])
     i = 1
     while i<len(preorder) and  preorder[i] < root.val:
         i+=1
