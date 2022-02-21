@@ -6,16 +6,14 @@ class BinaryTreeNode:
         self.right = right
         self.size = size
         
-def rebuild_bst_from_preorder(preorder_sequence):
+def bstFromPreorder(preorder_sequence):
 
-    if not preorder_sequence:
-        return None
-
-    transition_point = next(
-        (i
-         for i, a in enumerate(preorder_sequence) if a > preorder_sequence[0]),
-        len(preorder_sequence))
-    return BstNode(
-        preorder_sequence[0],
-        rebuild_bst_from_preorder(preorder_sequence[1:transition_point]),
-        rebuild_bst_from_preorder(preorder_sequence[transition_point:]))
+    if not preorder:
+            return None
+    root = TreeNode(preorder[0])
+    i = 1
+    while i<len(preorder) and  preorder[i] < root.val:
+        i+=1
+    root.left = bstFromPreorder(preorder[1:i])
+    root.right = bstFromPreorder(preorder[i:])
+    return root
