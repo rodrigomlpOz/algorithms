@@ -1,3 +1,7 @@
+'''
+https://leetcode.com/problems/decode-ways/
+'''
+
 def decode_ways(word):
     def recurse(word):
         if not word:
