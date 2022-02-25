@@ -6,7 +6,7 @@ def decode_ways(word):
     def recurse(word):
         if not word:
             return 1
-        if len(word) <= 1:
+        if len(word) == 1:
             return 1 if word[0] != '0' else 0
         else:
             for _ in range(len(word)-1):
