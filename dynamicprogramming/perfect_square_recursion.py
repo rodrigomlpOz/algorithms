@@ -1,3 +1,6 @@
+'''
+https://leetcode.com/problems/perfect-squares/
+'''
 import math
 def numSquares(n):
         square_nums = [i**2 for i in range(1, int(math.sqrt(n))+1)]
