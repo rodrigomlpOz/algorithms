@@ -17,3 +17,11 @@ def bracket_match(text):
       diff = 0
       
   return mis + diff
+
+# Test cases
+print(bracketMatch("((("))  # Expected output: 3
+print(bracketMatch("(()"))  # Expected output: 1
+print(bracketMatch(")("))   # Expected output: 2
+print(bracketMatch("()"))   # Expected output: 0
+print(bracketMatch("(())()")) # Expected output: 0
+print(bracketMatch("())(()")) # Expected output: 2
