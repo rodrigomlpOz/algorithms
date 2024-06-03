@@ -1,5 +1,11 @@
 '''
 EPI 6.2
+
+Given a number represented in a base 
+𝑏1 and a target base  𝑏2
+convert the number from base 
+𝑏1 to base  𝑏2
+b2. You can assume that the input number is a valid number in base 
 '''
 
 import string
@@ -26,9 +32,17 @@ def base_conversion(num, b1, b2):
     return convert_to_base(ans, b2)
 
 
+result = convert_base('1011', 2, 10)
+print(f"convert_base('1011', 2, 10) = {result}")
 
-n = "-8"
-b1 = 10
-b2 = 2
+# Test case 1: binary to decimal
+result = convert_base('1011', 2, 10)
+print(f"convert_base('1011', 2, 10) = {result}"
+# Test case 2: decimal to binary
+result = convert_base('11', 10, 2)
+print(f"convert_base('11', 10, 2) = {result}")
+# Test case 3: hex to decimal
+result = convert_base('1A', 16, 10)
+print(f"convert_base('1A', 16, 10) = {result}")
 ans = base_conversion(n, b1, b2)
 print(ans)
