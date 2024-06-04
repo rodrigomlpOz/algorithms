@@ -2,7 +2,11 @@
 Grea explanation of this approach
 https://www.youtube.com/watch?v=DJ4a7cmjZY0
 
-
+M after processing coin 3:
+1 1 1 1 1 1
+1 1 2 2 3 3
+1 1 2 2 3 3
+1 1 2 2 3 4
 '''
 class Solution:
     def change(self, amount, coins):
