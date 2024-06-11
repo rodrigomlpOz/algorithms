@@ -1,5 +1,23 @@
 '''
-https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+Problem Statement
+You are given an array prices where prices[i] is the price of a given stock on the i-th day.
+
+Find the maximum profit you can achieve. You may complete at most two transactions.
+
+Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
+
+Example
+Example 1:
+
+Problem Statement
+You are given an array prices where prices[i] is the price of a given stock on the i-th day.
+
+Find the maximum profit you can achieve. You may complete at most two transactions.
+
+Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
+
+Example
+Example 1:
 '''
 def buy_and_sell_stock_twice(prices):
 
