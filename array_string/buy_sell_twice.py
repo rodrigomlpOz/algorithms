@@ -12,23 +12,35 @@ Explanation: Buy on day 4 (price = 0) and sell on day 6 (price = 3), profit = 3-
              Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3.
 
 '''
-def buy_and_sell_stock_twice(prices):
+def maxProfit(prices):
+    if not prices:
+        return 0
 
-    max_total_profit, min_price_so_far = 0.0, float('inf')
-    first_buy_sell_profits = [0.0] * len(prices)
-    # Forward phase. For each day, we record maximum profit if we sell on that
-    # day.
-    for i, price in enumerate(prices):
-        min_price_so_far = min(min_price_so_far, price)
-        max_total_profit = max(max_total_profit, price - min_price_so_far)
-        first_buy_sell_profits[i] = max_total_profit
+    n = len(prices)
+    left_profits = [0] * n
+    right_profits = [0] * n
 
-    # Backward phase. For each day, find the maximum profit if we make the
-    # second buy on that day.
-    max_price_so_far = float('-inf')
-    for i, price in reversed(list(enumerate(prices[1:], 1))):
-        max_price_so_far = max(max_price_so_far, price)
-        max_total_profit = max(
-            max_total_profit,
-            max_price_so_far - price + first_buy_sell_profits[i])
-    return max_total_profit
+    # Left pass: Calculate max profit until each day
+    min_price = prices[0]
+    for i in range(1, n):
+        min_price = min(min_price, prices[i])
+        left_profits[i] = max(left_profits[i-1], prices[i] - min_price)
+
+    # Right pass: Calculate max profit from each day to the end
+    max_price = prices[-1]
+    for i in range(n-2, -1, -1):
+        max_price = max(max_price, prices[i])
+        right_profits[i] = max(right_profits[i+1], max_price - prices[i])
+
+    # Combine the two profits
+    max_profit = 0
+    for i in range(n):
+        max_profit = max(max_profit, left_profits[i] + right_profits[i])
+
+    return max_profit
+
+# Example function calls
+print(maxProfit([3, 3, 5, 0, 0, 3, 1, 4]))  # Expected output: 6
+print(maxProfit([1, 2, 3, 4, 5]))  # Expected output: 4
+print(maxProfit([7, 6, 4, 3, 1]))  # Expected output: 0
+
