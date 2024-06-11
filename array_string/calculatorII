@@ -1,5 +1,16 @@
 '''
-https://leetcode.com/problems/basic-calculator-ii/
+Problem Statement
+Implement a basic calculator to evaluate a simple expression string.
+
+The expression string contains only non-negative integers, +, -, *, / operators, and empty spaces. The integer division should truncate toward zero.
+
+Example 1:
+Problem Statement
+Implement a basic calculator to evaluate a simple expression string.
+
+The expression string contains only non-negative integers, +, -, *, / operators, and empty spaces. The integer division should truncate toward zero.
+
+Example 1:
 '''
 
 def calculate(s):
