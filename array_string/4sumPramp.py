@@ -3,7 +3,7 @@
 Given an unsorted array of integers `arr` and a target sum `s`, write a function `findArrayQuadruplet` that finds four numbers (quadruplet) in `arr` that sum up to `s`. Your function should return an array of these numbers in ascending order. If such a quadruplet doesn’t exist, return an empty array.
 
 #### Function Signature
-```python
+```
 def findArrayQuadruplet(arr: List[int], s: int) -> List[int]:
 ```
 
@@ -56,7 +56,7 @@ To solve this problem efficiently, consider the following approach:
 3. Use a two-pointer technique to find the remaining two elements that sum to the required value.
 
 ### Example Code:
-```python
+```
 from typing import List
 
 def findArrayQuadruplet(arr: List[int], s: int) -> List[int]:
