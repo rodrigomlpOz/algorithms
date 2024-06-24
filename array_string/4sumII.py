@@ -1,7 +1,52 @@
 '''
 Problem
 
-https://leetcode.com/problems/4sum-ii/
+**Problem Statement: 4Sum II**
+
+Given four lists of integers A, B, C, and D, each with length n, find the number of tuples (i, j, k, l) such that:
+
+\[ A[i] + B[j] + C[k] + D[l] = 0 \]
+
+You need to return the number of such tuples.
+
+### Example:
+
+#### Input:
+A = [1, 2]  
+B = [-2, -1]  
+C = [-1, 2]  
+D = [0, 2]
+
+#### Output:
+2
+
+### Explanation:
+
+The two tuples are:
+1. (0, 0, 0, 1) => 1 + (-2) + (-1) + 2 = 0
+2. (1, 1, 0, 0) => 2 + (-1) + (-1) + 0 = 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Solution
 '''
 
 import collections
@@ -26,3 +71,32 @@ def fourSumCount(A, B, C, D):
                 if hash[curr_sum] > 0:
                     count += hash[curr_sum]
         return count
+
+
+# Example 1
+A = [1, 2]
+B = [-2, -1]
+C = [-1, 2]
+D = [0, 2]
+print(fourSumCount(A, B, C, D))  # Output: 2
+
+# Example 2
+A = [0, 1, -1]
+B = [-1, 1, 0]
+C = [0, 0, 1]
+D = [-1, 1, 1]
+print(fourSumCount(A, B, C, D))  # Output: 17
+
+# Example 3
+A = [1, 2, 3]
+B = [4, -2, -1]
+C = [5, -1, 1]
+D = [-3, -2, -1]
+print(fourSumCount(A, B, C, D))  # Output: 1
+
+# Example 4
+A = [0]
+B = [0]
+C = [0]
+D = [0]
+print(fourSumCount(A, B, C, D))  # Output: 1
