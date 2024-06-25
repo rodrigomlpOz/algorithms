@@ -1,11 +1,5 @@
 '''
 EPI 6.2
-
-Given a number represented in a base 
-𝑏1 and a target base  𝑏2
-convert the number from base 
-𝑏1 to base  𝑏2
-b2. You can assume that the input number is a valid number in base 
 '''
 
 import string
