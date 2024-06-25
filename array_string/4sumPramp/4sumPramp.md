@@ -39,6 +39,33 @@ These signatures provide a starting point for implementing the `findArrayQuadrup
 
 #### Example
 
+```python
+# Example 1
+arr = [2, 7, 4, 0, 9, 5, 1, 3]
+s = 20
+print(findArrayQuadruplet(arr, s))  # Output: [0, 4, 7, 9]
+
+# Example 2
+arr = [1, 0, -1, 0, -2, 2]
+s = 0
+print(findArrayQuadruplet(arr, s))  # Output: [-2, -1, 1, 2]
+
+# Example 3
+arr = [4, 3, 2, 1]
+s = 10
+print(findArrayQuadruplet(arr, s))  # Output: []
+
+# Example 4
+arr = [1, 2, 3, 4, 5, 6, 7, 8]
+s = 26
+print(findArrayQuadruplet(arr, s))  # Output: [5, 6, 7, 8]
+
+# Example 5
+arr = [5, 5, 5, 5]
+s = 20
+print(findArrayQuadruplet(arr, s))  # Output: [5, 5, 5, 5]
+```
+
 **Input:**
 ```plaintext
 arr = [2, 7, 4, 0, 9, 5, 1, 3], s = 20
