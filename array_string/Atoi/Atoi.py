@@ -1,39 +1,40 @@
-'''
-Problem:
-https://www.geeksforgeeks.org/write-your-own-atoi/
-'''
-
-def myAtoi(str):
-        """
-        :type str: str
-        :rtype: int
-        """
-        str = str.strip()
-        sign = 1 
-        if not str or str[0].isalpha():
-            return 0
-        else:
-            if str[0] == "+":
-                str = str[1:]
-            elif str[0] == "-":
-                str = str[1:]
-                sign = -1
-            num = 0 
-            i = 0
-            while i < len(str) and str[i].isdigit():
-                    num = num * 10 + (ord(str[i])-ord('0'))
-                    i += 1
-            return max(-2**31, min(sign * num,2**31-1))
-
-
+def myAtoi(s: str) -> int:
+    INT_MAX = 2**31 - 1
+    INT_MIN = -2**31
+    
+    i = 0
+    n = len(s)
+    
+    # Step 1: Discard leading whitespaces
+    while i < n and s[i].isspace():
+        i += 1
+    
+    if i == n:
+        return 0
+    
+    # Step 2: Check for optional sign
+    sign = 1
+    if s[i] == '-':
+        sign = -1
+        i += 1
+    elif s[i] == '+':
+        i += 1
+    
+    # Step 3: Convert numerical characters
+    num = 0
+    while i < n and '0' <= s[i] <= '9':
+        digit = ord(s[i]) - ord('0')
+        # Check for overflow and underflow
+        if num > (INT_MAX - digit) // 10:
+            return INT_MAX if sign == 1 else INT_MIN
+        num = num * 10 + digit
+        i += 1
+    
+    return max(INT_MIN, min(sign * num, INT_MAX))
 
 # Example usage
-print(myAtoi("12345"))      # Output: 12345
-print(myAtoi("-6789"))      # Output: -6789
-print(myAtoi("123abc"))     # Output: 123
-print(myAtoi("abc123"))     # Output: 0
-print(myAtoi(""))           # Output: 0
-print(myAtoi("   -42"))     # Output: -42
+print(myAtoi("42"))            # Output: 42
+print(myAtoi("   -42"))        # Output: -42
 print(myAtoi("4193 with words"))  # Output: 4193
-print(myAtoi("words and 987"))    # Output: 0
-print(myAtoi("-91283472332"))     # Output: -2147483648 (clamped to 32-bit int)
+print(myAtoi("words and 987")) # Output: 0
+print(myAtoi("-91283472332"))  # Output: -2147483648 (INT_MIN)
