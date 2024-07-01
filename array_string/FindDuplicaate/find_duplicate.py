@@ -1,3 +1,10 @@
+'''
+In Phase 2, both pointers will indeed meet. The key idea here is that once a cycle is detected in Phase 1, the cycle's entrance (which is the duplicate number) can be found by moving both pointers one step at a time starting from the head and the intersection point, respectively. Here's the logic behind it:
+
+After detecting the cycle in Phase 1, the distance from the start of the array to the cycle's entrance is equal to the distance from the intersection point to the cycle's entrance.
+Thus, by resetting one pointer to the start of the array and keeping the other at the intersection point, both pointers will meet at the cycle's entrance (the duplicate number) when moved one step at a time.
+'''
+
 def findDuplicate(nums):
     tortoise = hare = nums[0]
     while True:
