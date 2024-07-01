@@ -1,8 +1,6 @@
-'''
-https://leetcode.com/problems/insert-delete-getrandom-o1/
-'''
 from random import choice
-class RandomizedSet():
+
+class RandomizedSet:
     def __init__(self):
         """
         Initialize your data structure here.
@@ -10,8 +8,7 @@ class RandomizedSet():
         self.dict = {}
         self.list = []
 
-        
-    def insert(val):
+    def insert(self, val):
         """
         Inserts a value to the set. Returns true if the set did not already contain the specified element.
         """
@@ -20,23 +17,20 @@ class RandomizedSet():
         self.dict[val] = len(self.list)
         self.list.append(val)
         return True
-        
 
-    def remove(val):
+    def remove(self, val):
         """
         Removes a value from the set. Returns true if the set contained the specified element.
         """
         if val in self.dict:
-            # move the last element to the place idx of the element to delete
             last_element, idx = self.list[-1], self.dict[val]
             self.list[idx], self.dict[last_element] = last_element, idx
-            # delete the last element
             self.list.pop()
             del self.dict[val]
             return True
         return False
 
-    def getRandom():
+    def getRandom(self):
         """
         Get a random element from the set.
         """
