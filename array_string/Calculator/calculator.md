@@ -20,6 +20,50 @@ Given an expression string `s`, evaluate the expression and return its value.
 def calculate(s: str) -> int:
 ```
 
+### Problem Statement
+
+Implement a basic calculator to evaluate a simple expression string.
+
+The expression string contains non-negative integers, '+', '-', '*', '/' operators, and empty spaces. The integer division should truncate toward zero.
+
+Given an expression string `s`, evaluate the expression and return its value.
+
+### Function Signature
+```python
+def calculate(s: str) -> int:
+    ...
+```
+
+### Examples
+```python
+# Example 1:
+Input: "3+2*2"
+Output: 7
+
+# Example 2:
+Input: " 3/2 "
+Output: 1
+
+# Example 3:
+Input: " 3+5 / 2 "
+Output: 5
+```
+
+
+### Function Calls
+Here's how you would call the `calculate` function with the provided examples:
+
+```python
+# Function call for Example 1
+print(calculate("3+2*2"))  # Output: 7
+
+# Function call for Example 2
+print(calculate(" 3/2 "))  # Output: 1
+
+# Function call for Example 3
+print(calculate(" 3+5 / 2 "))  # Output: 5
+```
+
 #### High-Level Algorithm
 1. **Initialization**:
    - Initialize `num` to store the current number being processed.
