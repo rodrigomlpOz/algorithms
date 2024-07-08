@@ -90,32 +90,4 @@ To solve this problem efficiently, consider the following approach:
 2. Use a nested loop to fix the first two elements.
 3. Use a two-pointer technique to find the remaining two elements that sum to the required value.
 
-### Example Code:
-```python
-from typing import List
-
-def findArrayQuadruplet(arr: List[int], s: int) -> List[int]:
-    n = len(arr)
-    if n < 4:
-        return []
-
-    arr.sort()
-    
-    for i in range(n - 3):
-        for j in range(i + 1, n - 2):
-            left = j + 1
-            right = n - 1
-            
-            while left < right:
-                current_sum = arr[i] + arr[j] + arr[left] + arr[right]
-                if current_sum == s:
-                    return [arr[i], arr[j], arr[left], arr[right]]
-                elif current_sum < s:
-                    left += 1
-                else:
-                    right -= 1
-
-    return []
-```
-
 This function first sorts the array and then uses two nested loops to fix the first two elements. It then uses the two-pointer technique to find the other two elements that sum up to the target value `s`. The function returns the quadruplet in ascending order if found, otherwise, it returns an empty array.
