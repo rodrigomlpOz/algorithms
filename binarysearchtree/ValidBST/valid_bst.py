@@ -4,13 +4,22 @@
 
 # Definition for a binary tree node.
 class TreeNode:
-     def __init__(self, val=0, left=None, right=None):
-         self.val = val
-         self.left = left
-         self.right = right
+    def __init__(self, val: int = 0, left: 'TreeNode' = None, right: 'TreeNode' = None):
+        self.val = val
+        self.left = left
+        self.right = right
+
 class Solution:
-    def isValidBST(self, root: TreeNode) -> bool:
+    def isValidBST(self, root: Optional[TreeNode], lower=float('-inf'), upper=float('inf')) -> bool:
         if not root:
             return True
-        else:
-            return (root.left.val < root.val if root.left else True) and (root.right.val > root.val if root.right else True) and self.isValidBST(root.left) and self.isValidBST(root.right)
+
+        val = root.val
+        if val <= lower or val >= upper:
+            return False
+
+        if not self.isValidBST(root.right, val, upper):
+            return False
+        if not self.isValidBST(root.left, lower, val):
+            return False
+        return True
