@@ -49,39 +49,3 @@ class Solution:
 
 3. **Edge Case**: If the input `digits` is an empty string, immediately return an empty list since there are no combinations to generate.
 
-### Function Implementation
-
-```python
-class Solution:
-    def letterCombinations(self, digits):
-        """
-        :type digits: str
-        :rtype: List[str]
-        """
-        def backtrack(result, temp, dic, digits, index):
-            if len(temp) == len(digits):
-                result.append(''.join(temp[:]))
-            else:
-                for char in dic[digits[index]]:
-                    # Choose
-                    temp.append(char)
-
-                    # Explore
-                    backtrack(result, temp, dic, digits, index + 1)
-
-                    # Undo
-                    temp.pop()
-
-        if not digits:
-            return []
-
-        dic = {
-            "2": "abc", "3": "def", "4": "ghi", "5": "jkl",
-            "6": "mno", "7": "pqrs", "8": "tuv", "9": "wxyz"
-        }
-        result = []
-        backtrack(result, [], dic, digits, 0)
-        return result
-```
-
-In this implementation, the `backtrack` function explores all possible letter combinations by iterating over the characters associated with the current digit, appending them to the current combination (`temp`), and recursively building up the solution. The backtracking step ensures that once a valid combination is recorded, the function backtracks to explore other possible combinations.
