@@ -1,11 +1,4 @@
-'''
-Input: "aab"
-Output:
-[
-  ["aa","b"],
-  ["a","a","b"]
-]
-'''
+
 def palindrome_partitioning(word):
     temp = []
     ans = []
