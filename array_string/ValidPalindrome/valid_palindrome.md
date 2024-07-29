@@ -41,23 +41,3 @@ def validPalindrome(s):
 
 4. **Check Palindrome**: If all corresponding characters match during the comparison, the string is a palindrome; otherwise, it is not.
 
-### Example Usage
-
-```python
-def validPalindrome(s):
-    words = [letter for letter in s if letter.isalnum()]
-    start, end = 0, len(words) - 1
-
-    while start < end:
-        if words[start].lower() != words[end].lower():
-            return False
-        start += 1
-        end -= 1
-    return True
-
-# Example usage
-print(validPalindrome("A man, a plan, a canal: Panama"))  # Output: True
-print(validPalindrome("race a car"))  # Output: False
-```
-
-In this example, the function `validPalindrome` processes the input string by filtering out non-alphanumeric characters and ignoring case, then uses the two-pointer technique to determine if the resulting string is a palindrome.
