@@ -1,29 +1,47 @@
-#9.12 EPI
-def binary_tree_from_preorder_inorder(preorder, inorder):
+from typing import List, Optional
 
-    node_to_inorder_idx = {data: i for i, data in enumerate(inorder)}
+class TreeNode:
+    def __init__(self, value: int, left: Optional['TreeNode'] = None, right: Optional['TreeNode'] = None):
+        self.value = value
+        self.left = left
+        self.right = right
 
-    # Builds the subtree with preorder[preorder_start:preorder_end] and
-    # inorder[inorder_start:inorder_end].
-    def binary_tree_from_preorder_inorder_helper(preorder_start, preorder_end,
-                                                 inorder_start, inorder_end):
-        if preorder_end <= preorder_start or inorder_end <= inorder_start:
+def binary_tree_from_preorder_inorder(preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+    # Create a dictionary to map each value to its index in the inorder traversal.
+    value_to_inorder_index = {value: index for index, value in enumerate(inorder)}
+
+    def construct_tree(preorder_start: int, preorder_end: int,
+                       inorder_start: int, inorder_end: int) -> Optional[TreeNode]:
+        # Base case: if the range is invalid, return None (no tree to construct).
+        if preorder_start >= preorder_end or inorder_start >= inorder_end:
             return None
 
-        root_inorder_idx = node_to_inorder_idx[preorder[preorder_start]]
-        left_subtree_size = root_inorder_idx - inorder_start
-        return TreeNode(
-            preorder[preorder_start],
-            # Recursively builds the left subtree.
-            binary_tree_from_preorder_inorder_helper(
-                preorder_start + 1, preorder_start + 1 + left_subtree_size,
-                inorder_start, root_inorder_idx),
-            # Recursively builds the right subtree.
-            binary_tree_from_preorder_inorder_helper(
-                preorder_start + 1 + left_subtree_size, preorder_end,
-                root_inorder_idx + 1, inorder_end))
+        # The first element in the current preorder range is the root of the subtree.
+        root_value = preorder[preorder_start]
+        root_inorder_index = value_to_inorder_index[root_value]
+        left_subtree_size = root_inorder_index - inorder_start
 
-    return binary_tree_from_preorder_inorder_helper(preorder_start=0,
-                                                    preorder_end=len(preorder),
-                                                    inorder_start=0,
-                                                    inorder_end=len(inorder))
+        # Create the root node with the identified value.
+        root = TreeNode(value=root_value)
+
+        # Recursively build the left subtree.
+        root.left = construct_tree(
+            preorder_start + 1,
+            preorder_start + 1 + left_subtree_size,
+            inorder_start,
+            root_inorder_index
+        )
+
+        # Recursively build the right subtree.
+        root.right = construct_tree(
+            preorder_start + 1 + left_subtree_size,
+            preorder_end,
+            root_inorder_index + 1,
+            inorder_end
+        )
+
+        return root
+
+    # Start the construction from the full range of preorder and inorder traversals.
+    return construct_tree(preorder_start=0, preorder_end=len(preorder),
+                          inorder_start=0, inorder_end=len(inorder))
