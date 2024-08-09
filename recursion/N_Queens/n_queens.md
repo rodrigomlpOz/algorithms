@@ -6,6 +6,17 @@ The N-Queens problem involves placing N chess queens on an N×N chessboard so th
 
 ```python
 
+# Python3 program to solve N Queen  
+# Problem using backtracking 
+global N 
+N = 4
+  
+def printSolution(board): 
+    for i in range(N): 
+        for j in range(N): 
+            print (board[i][j], end = " ") 
+        print()
+
 def solveNQ(): 
     board = [ [0, 0, 0, 0], 
               [0, 0, 0, 0], 
