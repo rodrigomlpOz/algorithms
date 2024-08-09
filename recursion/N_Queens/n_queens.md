@@ -17,6 +17,9 @@ def printSolution(board):
             print (board[i][j], end = " ") 
         print()
 
+def isSafe(board, row, col): 
+   pass
+
 def solveNQ(): 
     board = [ [0, 0, 0, 0], 
               [0, 0, 0, 0], 
