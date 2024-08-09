@@ -5,8 +5,22 @@ The N-Queens problem involves placing N chess queens on an N×N chessboard so th
 ## Function Signature
 
 ```python
-def solveNQ():
-    pass
+
+def solveNQ(): 
+    board = [ [0, 0, 0, 0], 
+              [0, 0, 0, 0], 
+              [0, 0, 0, 0], 
+              [0, 0, 0, 0] ] 
+  
+    if solveNQUtil(board, 0) == False: 
+        print ("Solution does not exist") 
+        return False
+  
+    printSolution(board) 
+    return True
+  
+# Driver Code 
+solveNQ() 
 ```
 
 ### Supporting Functions
