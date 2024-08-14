@@ -1,61 +1,46 @@
-# Recursive Python3 program to reverse 
-# a linked list 
-
-#hint -> you return the new_head in the recursion and do temp.next.next = temp for reversing pointer
-import math 
-  
-# Link list node  
 class Node:  
     def __init__(self, data):  
         self.data = data  
         self.next = None
       
-def LinkedList(): 
-    head = None
-          
-# Function to reverse the linked list  
 def reverse(node): 
-    if (node == None): 
+    if node is None or node.next is None: 
         return node 
           
-    if (node.next == None): 
-        return node 
-          
-    node1 = reverse(node.next) 
+    # Recursively reverse the rest of the list
+    new_head = reverse(node.next) 
+    
+    # Adjust the pointers to reverse the link
     node.next.next = node 
     node.next = None
-    return node1 
+    
+    return new_head 
   
-# Function to print linked list  
-def printList(): 
+def printList(head): 
     temp = head 
-    while (temp != None) : 
-        print(temp.data, end = " ") 
+    while temp is not None: 
+        print(temp.data, end=" ") 
         temp = temp.next
+    print()  # For a newline after the list is printed
           
 def push(head_ref, new_data): 
     new_node = Node(new_data) 
-    new_node.data = new_data 
     new_node.next = head_ref 
-    head_ref = new_node 
-    return head_ref 
+    return new_node
   
-# Driver Code 
 if __name__=='__main__':  
       
     # Start with the empty list  
-    head = LinkedList() 
+    head = None
     head = push(head, 20) 
     head = push(head, 4) 
     head = push(head, 15) 
     head = push(head, 85) 
   
     print("Given linked list") 
-    printList() 
+    printList(head) 
   
     head = reverse(head) 
   
-    print("\nReversed Linked list") 
-    printList() 
-      
-# This code is contributed by AbhiThakur 
+    print("Reversed Linked list") 
+    printList(head)
