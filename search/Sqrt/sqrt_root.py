@@ -1,11 +1,3 @@
-'''
-Input: "aab"
-Output:
-[
-  ["aa","b"],
-  ["a","a","b"]
-]
-'''
 def val_equal_index(num):
     l = 0
     h = num-1
