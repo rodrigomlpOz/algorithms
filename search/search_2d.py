@@ -1,11 +1,3 @@
-'''
-Input: "aab"
-Output:
-[
-  ["aa","b"],
-  ["a","a","b"]
-]
-'''
 def search_matrix(matrix, target):
     row = 0
     col = len(matrix[0]) - 1
