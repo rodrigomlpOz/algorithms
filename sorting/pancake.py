@@ -1,11 +1,11 @@
 def flip(arr, k):
-    start = 0 
+    start = 0
     end = k
-    while (start < end):
+    while start < end:
         arr[start], arr[end] = arr[end], arr[start]
         start += 1
         end -= 1
-    return arr 
+    return arr
 
 def find_max_idx(arr, idx):
     max_val = float('-inf')
