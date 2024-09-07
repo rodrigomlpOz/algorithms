@@ -50,3 +50,42 @@ isBipartite(graph2)
   
 - **Space Complexity:** O(V) for the `color` dictionary and recursion stack.
 
+The two graphs you provided can be visualized based on their adjacency lists. Here's how they would look:
+
+### Graph 1: `[[1,3], [0,2], [1,3], [0,2]]`
+- **Adjacency List Explanation:**
+  - Node 0 is connected to nodes 1 and 3.
+  - Node 1 is connected to nodes 0 and 2.
+  - Node 2 is connected to nodes 1 and 3.
+  - Node 3 is connected to nodes 0 and 2.
+
+This graph can be drawn as:
+
+```
+   0 ---- 1
+   |      |
+   |      |
+   3 ---- 2
+```
+
+- This graph is bipartite. We can split it into two sets:
+  - Set 1: {0, 2}
+  - Set 2: {1, 3}
+
+### Graph 2: `[[1,2,3], [0,2], [0,1,3], [0,2]]`
+- **Adjacency List Explanation:**
+  - Node 0 is connected to nodes 1, 2, and 3.
+  - Node 1 is connected to nodes 0 and 2.
+  - Node 2 is connected to nodes 0, 1, and 3.
+  - Node 3 is connected to nodes 0 and 2.
+
+This graph can be drawn as:
+
+```
+   1 ---- 0 ---- 3
+    \    / \    /
+     \  /   \  /
+       2 -----
+```
+
+- This graph is **not bipartite**. It's impossible to split the graph into two sets where all edges only connect nodes in different sets because nodes 0, 2, and 3 form a triangle, and each pair of connected nodes would have to be in different sets, which is impossible.
