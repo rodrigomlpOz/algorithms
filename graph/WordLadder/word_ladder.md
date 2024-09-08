@@ -80,7 +80,7 @@ print(i)  # Expected Output: 0 (No valid transformation path)
 ```
 
 ### Time Complexity:
-- **Time Complexity**: O(M^2 * N), where M is the length of each word and N is the number of words in the `wordList`. For each word, we generate all possible transformations, which takes O(M) time, and for each transformation, we search through the word list, which also takes O(M) for each of N words.
+- **Time Complexity**: O(M * N), where M is the length of each word and N is the number of words in the `wordList`. For each word, we generate all possible transformations, which takes O(M) time, and for each transformation, we search through the word list, which also takes O(M) for each of N words.
 
 ### Space Complexity:
 - **Space Complexity**: O(N), where N is the number of words in the `wordList`, for storing the queue and visited words.
