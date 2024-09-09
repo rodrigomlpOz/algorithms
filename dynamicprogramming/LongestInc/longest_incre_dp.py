@@ -1,15 +1,8 @@
 def lengthOfLIS(nums):
-    if not nums:
-    		return 0
-	dp = [1] * len(nums)
-	max_len = 1
-	for i in range(1, len(nums)):
-		for j in range(0, i):
-			if nums[j] < nums[i]:
-				dp[i] = max(dp[i], dp[j] + 1)
-		max_len = max(max_len, dp[i])
-	return max_len
-
-
-arr = [10,9,2,5]
-lengthOfLIS(arr)
+    def max_lis(idx, cur_max):
+        if idx == len(nums):
+            return 0
+        if nums[idx] > cur_max:
+            return max(1 + max_lis(idx + 1, nums[idx]), max_lis(idx + 1, cur_max))
+        return max_lis(idx + 1, cur_max)
+    return max_lis(0, float('-inf'))
