@@ -3,21 +3,19 @@ You are climbing a staircase. It takes `n` steps to reach the top. Each time you
 
 ### Function Definition:
 ```python
-class Solution:
-    def climbStairs(self, n: int) -> int:
-        # Logic to be defined
-        pass
+def climbStairs(self, n: int) -> int:
+    # Logic to be defined
+    pass
 ```
 
 ### Function Calls:
 ```python
-solution = Solution()
 
 # Example test cases
-print(solution.climbStairs(2))  # Expected output: 2 (ways: [1+1], [2])
-print(solution.climbStairs(3))  # Expected output: 3 (ways: [1+1+1], [1+2], [2+1])
-print(solution.climbStairs(4))  # Expected output: 5 (ways: [1+1+1+1], [1+1+2], [1+2+1], [2+1+1], [2+2])
-print(solution.climbStairs(5))  # Expected output: 8 (ways: [1+1+1+1+1], [1+1+1+2], [1+1+2+1], [1+2+1+1], [2+1+1+1], [1+2+2], [2+1+2], [2+2+1])
+print(climbStairs(2))  # Expected output: 2 (ways: [1+1], [2])
+print(climbStairs(3))  # Expected output: 3 (ways: [1+1+1], [1+2], [2+1])
+print(climbStairs(4))  # Expected output: 5 (ways: [1+1+1+1], [1+1+2], [1+2+1], [2+1+1], [2+2])
+print(climbStairs(5))  # Expected output: 8 (ways: [1+1+1+1+1], [1+1+1+2], [1+1+2+1], [1+2+1+1], [2+1+1+1], [1+2+2], [2+1+2], [2+2+1])
 ```
 
 ### High-Level Explanation:
