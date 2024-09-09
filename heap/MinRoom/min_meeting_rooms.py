@@ -1,28 +1,37 @@
-class Solution:
-    def minMeetingRooms(self, intervals):
-        # If there is no meeting to schedule then no room needs to be allocated.
-        if not intervals:
-            return 0
+import heapq
 
-        # The heap initialization
-        free_rooms = []
+def minMeetingRooms(intervals):
+    """
+    Function to determine the minimum number of meeting rooms required.
 
-        # Sort the meetings in increasing order of their start time.
-        intervals.sort(key= lambda x: x[0])
+    Args:
+    intervals: List[List[int]] - A list of meeting time intervals.
 
-        # Add the first meeting. We have to give a new room to the first meeting.
-        heapq.heappush(free_rooms, intervals[0][1])
+    Returns:
+    int - The minimum number of meeting rooms required.
+    """
 
-        # For all the remaining meeting rooms
-        for i in intervals[1:]:
+    # If there are no meetings, we don't need any rooms
+    if not intervals:
+        return 0
 
-            # If the room due to free up the earliest is free, assign that room to this meeting.
-            if free_rooms[0] <= i[0]:
-                heapq.heappop(free_rooms)
-                
-             # If a new room is to be assigned, then also we add to the heap,
-            # If an old room is allocated, then also we have to add to the heap with updated end time.
-            heapq.heappush(free_rooms, i[1])
+    # Sort the meetings based on start times
+    intervals.sort(key=lambda x: x[0])
 
-        # The size of the heap tells us the minimum rooms required for all the meetings.
-        return len(free_rooms)
+    # Initialize a heap to keep track of the end times of meetings
+    free_rooms = []
+
+    # Add the first meeting's end time to the heap
+    heapq.heappush(free_rooms, intervals[0][1])
+
+    # Iterate over the remaining meetings
+    for i in intervals[1:]:
+        # If the room that frees up the earliest can be reused, pop it from the heap
+        if free_rooms[0] <= i[0]:
+            heapq.heappop(free_rooms)
+
+        # Push the current meeting's end time onto the heap (whether a new room or reused room)
+        heapq.heappush(free_rooms, i[1])
+
+    # The number of rooms required is the size of the heap
+    return len(free_rooms)
