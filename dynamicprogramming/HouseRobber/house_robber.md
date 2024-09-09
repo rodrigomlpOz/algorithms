@@ -4,22 +4,7 @@ You are a professional robber planning to rob houses along a street. Each house 
 ### Function Definition:
 ```python
 def house_robber(nums):
-    if not nums: 
-        return 0
-    if len(nums) == 1: 
-        return nums[0]
-
-    dp = [0] * len(nums)  # dp[i] will hold the max money we can rob up to house i
-    dp[0] = nums[0]  # Base case: If we rob the first house
-    dp[1] = max(nums[0], nums[1])  # Base case: Choose the max of the first two houses
-    
-    # Start filling dp array from the third house onwards
-    for i in range(2, len(nums)):
-        # We either rob the current house and add the best option two houses before
-        # or we skip this house and take the previous best option
-        dp[i] = max(nums[i] + dp[i-2], dp[i-1])
-
-    return dp[-1]  # The last element contains the max money we can rob
+    pass
 ```
 
 ### Function Calls:
