@@ -1,3 +1,101 @@
+### General Formula to Convert 2D to 1D DP:
+
+The key idea is that in a **2D DP table** `dp[i][j]`, where `i` typically represents the number of items or choices, and `j` represents the target value (e.g., weight, sum, etc.), we can optimize the solution to **1D** by realizing that the current state only depends on the previous state of the DP array. The 1D DP array can replace the second dimension by updating from right to left (for backward traversal) to ensure we are not overwriting values in the same iteration.
+
+### Key Formula:
+- In **2D DP**: `dp[i][j] = dp[i-1][j] (exclude current element) + dp[i-1][j - element] (include current element)`
+- In **1D DP**: We update `dp[j]` using the **same array** by processing the items in reverse order: `dp[j] = dp[j] + dp[j - element]`
+
+### Why Backward Traversal?
+When we use **1D DP**, we traverse **backward** (right to left) for the current item or value because it prevents overwriting the values that are still needed in the current iteration. If you traverse forward (left to right), you may overwrite values before they are used.
+
+### Transition Formula:
+1. **For each element `x` (e.g., weight, coin, or number)**:
+   - **2D DP**: `dp[i][j] = dp[i-1][j] + dp[i-1][j - x]`
+   - **1D DP**: `dp[j] = dp[j] + dp[j - x]` (traverse `j` from `target` down to `x`)
+
+### Example: **Converting Combination Sum to 1D DP**
+
+Let's take your `combinationSum2D` example and convert it to a **1D DP**.
+
+#### 2D DP Solution:
+
+```python
+def combinationSum2D(nums: list[int], target: int) -> int:
+    n = len(nums)
+    
+    # Initialize dp array where dp[i][j] means the number of ways to get sum j using first i numbers
+    dp = [[0] * (target + 1) for _ in range(n + 1)]
+    
+    # Base case: There's exactly one way to make sum 0 (by using no elements)
+    for i in range(n + 1):
+        dp[i][0] = 1
+    
+    # Fill the dp array
+    for i in range(1, n + 1):
+        for j in range(1, target + 1):
+            # Exclude the current number
+            dp[i][j] = dp[i-1][j]
+            # Include the current number if it's not greater than the current sum
+            if j >= nums[i-1]:
+                dp[i][j] += dp[i][j - nums[i-1]]
+    
+    return dp[n][target]
+```
+
+#### Convert to 1D DP:
+
+```python
+def combinationSum1D(nums: list[int], target: int) -> int:
+    # Initialize a 1D DP array where dp[j] represents the number of ways to get sum j
+    dp = [0] * (target + 1)
+    
+    # Base case: There's exactly one way to make sum 0 (by using no elements)
+    dp[0] = 1
+    
+    # Fill the dp array
+    for num in nums:  # For each number in the array
+        for j in range(num, target + 1):  # Traverse forward because we're considering unlimited use of each num
+            dp[j] += dp[j - num]
+    
+    return dp[target]
+
+# Example usage
+print(combinationSum1D([1, 2, 3], 4))  # Output: 7
+print(combinationSum1D([2, 3, 5], 8))  # Output: 3
+```
+
+### Explanation:
+- The **2D DP** uses `dp[i][j]`, where `i` represents the first `i` numbers used and `j` represents the current target sum.
+- In the **1D DP** solution, we use just a single array `dp[j]`, where `j` represents the sum we're trying to make, and we update the array in-place.
+
+**Backward vs Forward Traversal**:
+- In the **Knapsack** or **0/1 Coin Change** problem, you need to traverse **backward** to avoid using the same item multiple times.
+- In problems like **Combination Sum** (where numbers can be used multiple times), you can traverse **forward**.
+
+---
+
+### Steps for Conversion from 2D to 1D DP:
+
+1. **Identify the transition relation** in the 2D DP array.
+2. **Collapse the first dimension** (number of items or coins) by maintaining only one dimension for the target.
+3. **Use backward traversal** (if necessary) to avoid overwriting in problems where elements can only be used once.
+4. **Use forward traversal** when items can be used multiple times, as with problems like **Combination Sum** or **Unbounded Knapsack**.
+
+---
+
+### Summary:
+
+- The **key formula** to convert from 2D to 1D is:  
+  \[
+  dp[j] = dp[j] + dp[j - x]
+  \]
+  (where `x` is the current item being considered and `j` is the current target).
+- **Use backward traversal** for problems where items can be used only once, like **0/1 Knapsack** or **0/1 Coin Change**.
+- **Use forward traversal** when items can be used multiple times, as in **Combination Sum** or **Unbounded Knapsack**.
+  
+Let me know if you need further explanation or help with specific examples!
+
 ### Skeleton for 1D DP:
 
 ```python
