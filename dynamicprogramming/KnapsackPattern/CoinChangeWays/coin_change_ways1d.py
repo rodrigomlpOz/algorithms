@@ -1,16 +1,20 @@
-  def change(self, amount, coins):
-      # Initialize a 1D DP array with size (amount + 1), and set dp[0] to 1
-      dp = [0] * (amount + 1)
-      dp[0] = 1  # There's one way to make amount 0 (use no coins)
-      
-      # Process each coin
-      for coin in coins:
-          for j in range(coin, amount + 1):
-              dp[j] += dp[j - coin]  # Add ways to make amount j by including this coin
-      
-      # The answer is the number of ways to make the amount using all the coins
-      return dp[amount]
+def coinChange2(coins, amount):
+    # Step 1: Initialize the DP array
+    dp = [0] * (amount + 1)
+    
+    # Step 2: Base case: There is one way to make the amount 0
+    dp[0] = 1
 
-amount = 5
-coins = [1, 2, 5]
-print(change(amount, coins))  # Output: 4
+    # Step 3: Iterate over each amount from 1 to 'amount'
+    for i in range(1, amount + 1):
+        # Step 4: For each amount i, check all coin denominations
+        for coin in coins:
+            if i >= coin:
+                # Step 5: Update dp[i] with the number of ways to make amount i
+                dp[i] += dp[i - coin]
+
+    # Step 6: Return the number of ways to make the amount
+    return dp[amount]
+
+# Example usage
+print(coinChange2([1, 2, 5], 5))  # Output: 4
