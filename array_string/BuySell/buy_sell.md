@@ -24,6 +24,28 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
 def max_profit(prices: list[int]) -> int:
 ```
 
+Here are some function calls for `max_profit`:
+
+```python
+# Test case 1: Increasing and decreasing prices
+max_profit([7, 1, 5, 3, 6, 4])  # Expected output: 5
+
+# Test case 2: Prices always decreasing
+max_profit([7, 6, 4, 3, 1])  # Expected output: 0
+
+# Test case 3: Prices always increasing
+max_profit([1, 2, 3, 4, 5])  # Expected output: 4
+
+# Test case 4: Single price
+max_profit([10])  # Expected output: 0
+
+# Test case 5: Empty price list
+max_profit([])  # Expected output: 0
+
+# Test case 6: Random price fluctuation
+max_profit([2, 4, 1, 7, 5, 8, 3])  # Expected output: 7
+```
+
 ## High-Level Approach
 
 1. **Initialize Variables**:
