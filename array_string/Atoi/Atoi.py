@@ -25,9 +25,13 @@ def myAtoi(s: str) -> int:
     while i < n and '0' <= s[i] <= '9':
         digit = ord(s[i]) - ord('0')
         # Check for overflow and underflow
-        if num > (INT_MAX - digit) // 10:
-            return INT_MAX if sign == 1 else INT_MIN
         num = num * 10 + digit
+
+        # Overflow check after adding the new digit
+        if sign * num > INT_MAX:
+            return INT_MAX
+        elif sign * num < INT_MIN:
+            return INT_MIN
         i += 1
     
     return max(INT_MIN, min(sign * num, INT_MAX))
