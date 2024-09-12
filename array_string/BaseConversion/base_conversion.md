@@ -88,3 +88,39 @@ print(f"base_conversion('123456789', 10, 2) = {result}")  # Output: "11101011011
 3. **Handle Negative Numbers**: If the original number is negative, ensure that the final result also reflects this by adding a '-' sign.
 
 4. **Edge Cases**: Consider edge cases such as zero, and ensure that the implementation handles bases up to 36, which includes digits 0-9 and letters A-Z.
+5. 
+Here's a short example you can include in your documentation to explain the usage of `%` in base conversion:
+
+---
+
+### Example: Using Modulo for Base Conversion
+
+The modulo operation (`%`) is used in base conversion to extract the digits of a number when converting from a decimal (base 10) to another base. Each `%` operation provides the next least significant digit in the target base.
+
+#### Example: Convert `19` from decimal (base 10) to binary (base 2)
+
+1. **Start with 19**  
+   `19 % 2 = 1` → The rightmost binary digit is `1`.  
+   Divide: `19 // 2 = 9`.
+
+2. **Next digit**  
+   `9 % 2 = 1` → The next binary digit is `1`.  
+   Divide: `9 // 2 = 4`.
+
+3. **Continue**  
+   `4 % 2 = 0` → The next binary digit is `0`.  
+   Divide: `4 // 2 = 2`.
+
+4. **Next digit**  
+   `2 % 2 = 0` → The next binary digit is `0`.  
+   Divide: `2 // 2 = 1`.
+
+5. **Final digit**  
+   `1 % 2 = 1` → The next binary digit is `1`.  
+   Divide: `1 // 2 = 0`.
+
+The binary representation of `19` is the reverse of the digits collected: **`10011`**.
+
+---
+
+This example shows how `%` helps in extracting digits during base conversion.
