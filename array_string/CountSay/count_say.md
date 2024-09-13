@@ -29,25 +29,13 @@ print(f"Calling count_and_say({n})")
 result = count_and_say(n)
 print(f"Result of count_and_say({n}): {result}\n")
 
-# Example 2: Generate the next term from "1211"
-current_term = "1211"
-print(f"Calling generate_next('{current_term}')")
-next_term = generate_next(current_term)
-print(f"Result of generate_next('{current_term}'): {next_term}\n")
-
-# Example 3: Generate the 1st term
+# Example 2: Generate the 1st term
 n = 1
 print(f"Calling count_and_say({n})")
 result = count_and_say(n)
 print(f"Result of count_and_say({n}): {result}\n")
 
-# Example 4: Generate the next term from "111221"
-current_term = "111221"
-print(f"Calling generate_next('{current_term}')")
-next_term = generate_next(current_term)
-print(f"Result of generate_next('{current_term}'): {next_term}\n")
-
-# Example 5: Generate the 6th term
+# Example 3: Generate the 6th term
 n = 6
 print(f"Calling count_and_say({n})")
 result = count_and_say(n)
