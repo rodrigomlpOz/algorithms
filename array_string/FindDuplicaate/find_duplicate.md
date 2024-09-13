@@ -10,7 +10,8 @@ Given an array of integers `nums` containing `n + 1` integers where each integer
 3. Your runtime complexity should be less than O(n^2).
 4. There is only one duplicate number in the array, but it could be repeated more than once.
 
-### Example:
+Here’s the version with function definitions and calls, without the implementation details:
+
 def find_duplicate(nums):
     # Function to find the duplicate number
     pass
@@ -21,7 +22,9 @@ print("Output:", find_duplicate(nums1))  # Expected Output: 2
 
 nums2 = [3, 1, 3, 4, 2]
 print("Output:", find_duplicate(nums2))  # Expected Output: 3
+```
 
+This version defines the function `find_duplicate(nums)` and includes the test cases, but the implementation is left as a placeholder (`pass`).
 
 ### Notes:
 - You can read more about various creative ways to solve this problem [here](https://leetcode.com/problems/find-the-duplicate-number/solution/).
