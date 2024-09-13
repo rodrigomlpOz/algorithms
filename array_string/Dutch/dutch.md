@@ -12,6 +12,7 @@ Write a program that takes an array `A` and an index `index` into `A`, and rearr
 #### Function Signature
 ```python
 def dutch(A: List[int], index: int) -> None:
+   pass
 ```
 
 #### High-Level Algorithm
