@@ -26,28 +26,6 @@ def dutch(A: List[int], index: int) -> None:
 3. **Output**:
    - The array `A` is modified in place to reflect the partitioning.
 
-#### Function Implementation
-
-```python
-def dutch(A, index):
-    val = A[index]
-    less = 0
-    equal = 0
-    more = len(A)
-
-    while equal < more:
-        if A[equal] < val:
-            A[less], A[equal] = A[equal], A[less]
-            less += 1
-            equal += 1
-        elif A[equal] > val:
-            more -= 1
-            A[equal], A[more] = A[more], A[equal]
-        else:
-            equal += 1
-    return A
-```
-
 #### Example Function Calls
 
 ```python
