@@ -16,16 +16,6 @@ def int_to_string(num):
 ans = int_to_string(-345)
 print(ans)
 
-def string_to_int(num):
-    is_negative = 0
-    ans = 0
-    if num[0] == "-":
-        is_negative = 1
-    num = num[is_negative:]
-    for digit in num:
-        ans = (ans*10) + string.digits.index(digit)
-    return -ans if is_negative else ans
-
 num = '-365'
 ans = string_to_int(num)
 print(ans)
