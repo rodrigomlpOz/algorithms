@@ -4,13 +4,10 @@
 
 Implement the `RandomizedSet` class:
 
-- `bool insert(int val)`:
-  - Inserts an item `val` into the set if not present. Returns `True` if the item was not present, `False` otherwise.
-- `bool remove(int val)`:
-  - Removes an item `val` from the set if present. Returns `True` if the item was present, `False` otherwise.
-- `int getRandom()`:
-  - Returns a random element from the current set of elements. Each element must have the same probability of being returned.
-
+### Summary of Constraints:
+- O(1) time complexity for `insert`, `remove`, and `getRandom`.
+- No duplicate elements in the set.
+- You need to use a combination of a **list** (for random access) and a **hashmap** (for tracking indices).
 
  ### Function Definitions:
 
