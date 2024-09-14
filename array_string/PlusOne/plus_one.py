@@ -12,7 +12,7 @@ def plus_one(A):
     if A[0] == 10:
         A[0] = 1
         A.append(0)
-    print(A)
+    return A
 
 A = [8,9,9]
 plus_one(A)
