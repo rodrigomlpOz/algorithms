@@ -13,12 +13,14 @@ def int_to_string(num: int) -> str
 #### Output:
 - (str): The string representation of the input integer.
 
-#### Example:
+
 ```python
-assert int_to_string(345) == "345"
-assert int_to_string(-345) == "-345"
-assert int_to_string(0) == "0"
-```
+print(int_to_string(345))    # Expected output: "345"
+print(int_to_string(-345))   # Expected output: "-345"
+print(int_to_string(0))      # Expected output: "0"
+``` 
+
+These will directly print the results of `int_to_string()` for each input.
 
 #### High-Level Approach:
 1. **Handle Negative Numbers**: Check if the input integer is negative. If so, set a flag and convert the number to its positive equivalent.
