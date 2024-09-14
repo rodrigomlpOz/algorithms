@@ -5,6 +5,11 @@ Given a non-negative integer represented as an array of digits, where each eleme
 #### Function Signature:
 ```python
 def plus_one(A: List[int]) -> List[int]
+ pass
+
+print(plus_one([1,2,9]))
+print(plus_one([9,9,9]))
+print(plus_one([0]))
 ```
 
 #### Input:
@@ -13,12 +18,9 @@ def plus_one(A: List[int]) -> List[int]
 #### Output:
 - (List[int]): A list of integers representing the incremented number in the same format.
 
-#### Example:
-```python
-assert plus_one([1,2,9]) == [1,3,0]
-assert plus_one([9,9,9]) == [1,0,0,0]
-assert plus_one([0]) == [1]
-```
+
+# Test cases
+
 
 ### High-Level Approach:
 1. **Initialize Remainder**: Start by initializing a variable `remainder` to 1. This represents the "one" that we need to add to the number.
