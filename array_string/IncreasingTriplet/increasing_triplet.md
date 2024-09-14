@@ -4,6 +4,18 @@
 
 Given an integer array `nums`, determine if there exists a triplet of indices `(i, j, k)` such that `i < j < k` and `nums[i] < nums[j] < nums[k]`. If such a triplet exists, return `true`; otherwise, return `false`.
 
+
+```python
+def increasingTriplet(nums):
+    """
+    Determines if there exists a triplet (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k].
+    
+    :param nums: List[int] - List of integers.
+    :return: bool - True if such a triplet exists, False otherwise.
+    """
+    pass
+```
+
 **Constraints:**
 
 - `1 <= nums.length <= 5 * 10^5`
