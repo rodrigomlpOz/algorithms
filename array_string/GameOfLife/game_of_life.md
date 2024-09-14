@@ -18,6 +18,47 @@ The next state is created by applying these rules simultaneously to every cell i
 - 1 <= m, n <= 25
 - `board[i][j]` is `0` or `1`.
 
+def game_of_life(board):
+    """
+    Updates the board to the next state according to the Game of Life rules.
+    """
+    pass
+
+Here's the requested structure with only function definitions and function calls, no implementation:
+
+### Function Definitions:
+
+```python
+def count_neighbours(board, row, col):
+    """
+    Counts the number of live neighbors around the cell at position (row, col).
+    """
+    pass
+
+def game_of_life(board):
+    """
+    Updates the board to the next state according to the Game of Life rules.
+    """
+    pass
+```
+
+### Function Calls:
+
+```python
+# Example board
+board = [
+    [0, 1, 0],
+    [0, 0, 1],
+    [1, 1, 1],
+    [0, 0, 0]
+]
+
+# Call the game_of_life function to update the board
+game_of_life(board)
+
+# Call count_neighbours for an example position
+count_neighbours(board, 1, 1)
+```
 ### High-Level Approach
 
 1. **State Definitions:**
