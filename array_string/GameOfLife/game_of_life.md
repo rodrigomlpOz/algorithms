@@ -18,13 +18,6 @@ The next state is created by applying these rules simultaneously to every cell i
 - 1 <= m, n <= 25
 - `board[i][j]` is `0` or `1`.
 
-def game_of_life(board):
-    """
-    Updates the board to the next state according to the Game of Life rules.
-    """
-    pass
-
-Here's the requested structure with only function definitions and function calls, no implementation:
 
 ### Function Definitions:
 
