@@ -11,6 +11,59 @@ Implement the `RandomizedSet` class:
 - `int getRandom()`:
   - Returns a random element from the current set of elements. Each element must have the same probability of being returned.
 
+
+ ### Function Definitions:
+
+```python
+import random
+
+class RandomizedSet:
+    def __init__(self):
+        """
+        Initialize your data structure here.
+        """
+        pass
+    
+    def insert(self, val: int) -> bool:
+        """
+        Inserts an item val into the set if not present. 
+        Returns True if the item was not present, False otherwise.
+        """
+        pass
+    
+    def remove(self, val: int) -> bool:
+        """
+        Removes an item val from the set if present.
+        Returns True if the item was present, False otherwise.
+        """
+        pass
+    
+    def getRandom(self) -> int:
+        """
+        Returns a random element from the current set of elements. 
+        Each element must have the same probability of being returned.
+        """
+        pass
+```
+
+### Function Calls:
+
+```python
+# Initialize the RandomizedSet object
+randomizedSet = RandomizedSet()
+
+# Example function calls
+print(randomizedSet.insert(1))  # Inserts 1 to the set. Should return True as it was not present before.
+print(randomizedSet.remove(2))  # Removes 2 from the set. Should return False as it is not present.
+print(randomizedSet.insert(2))  # Inserts 2 to the set. Should return True as it was not present before.
+print(randomizedSet.getRandom()) # Should return 1 or 2 randomly.
+print(randomizedSet.remove(1))  # Removes 1 from the set. Should return True.
+print(randomizedSet.insert(2))  # 2 is already in the set, so should return False.
+print(randomizedSet.getRandom()) # Should return 2.
+```
+
+This structure defines the class and outlines the required methods (`insert`, `remove`, `getRandom`) without providing an implementation.
+
 **Constraints:**
 
 - Implement the functions such that each function works in average O(1) time complexity.
