@@ -1,43 +1,95 @@
-## Problem Statement
+### Problem Definition:
 
-The problem "Valid Palindrome" involves determining if a given string is a palindrome, considering only alphanumeric characters and ignoring cases. A string is considered a palindrome if it reads the same backward as forward. The solution should disregard spaces and punctuation.
+A phrase is a **palindrome** if it reads the same forward and backward after:
+1. Converting all uppercase letters into lowercase.
+2. Removing all non-alphanumeric characters (letters and numbers).
 
-### Function Signature
+You are given a string `s`. The task is to determine if `s` is a palindrome.
+
+### Function Definition:
 
 ```python
-def validPalindrome(s):
-    pass
+def isPalindrome(s: str) -> bool:
+    """
+    Determine if the given string is a palindrome after converting to lowercase
+    and removing non-alphanumeric characters.
+    
+    :param s: str - The input string
+    :return: bool - True if the string is a palindrome, otherwise False
+    """
+    # Your code here
 ```
 
-### Input Parameters
+### Approach:
 
-- `s`: A string that can include letters, numbers, spaces, and punctuation.
+1. **Remove Non-Alphanumeric Characters:**
+   - Iterate through the string and filter out non-alphanumeric characters, while converting all characters to lowercase.
 
-### Output
+2. **Two Pointer Technique:**
+   - Use two pointers, one starting from the beginning of the cleaned string and the other from the end.
+   - Compare the characters at these pointers. If they match, move the pointers inward. If they don't match, return `false`.
 
-- A boolean value indicating whether the string is a valid palindrome.
+3. **Handle Empty Strings:**
+   - An empty string or a string with only non-alphanumeric characters (e.g., spaces, punctuation) should be considered a palindrome, as it reads the same forward and backward.
 
-### Example Inputs and Outputs
+### Code Implementation:
 
-**Example 1:**
+```python
+def isPalindrome(s: str) -> bool:
+    # Step 1: Remove non-alphanumeric characters and convert to lowercase
+    cleaned_s = ''.join(char.lower() for char in s if char.isalnum())
+    
+    # Step 2: Use two pointers to check if the cleaned string is a palindrome
+    left, right = 0, len(cleaned_s) - 1
+    
+    while left < right:
+        if cleaned_s[left] != cleaned_s[right]:
+            return False
+        left += 1
+        right -= 1
+    
+    return True
+```
 
-- **Input:** `s = "A man, a plan, a canal: Panama"`
-- **Output:** `True`
-- **Explanation:** After removing non-alphanumeric characters and ignoring case, the string becomes "amanaplanacanalpanama", which reads the same forwards and backwards.
+### Explanation:
 
-**Example 2:**
+1. **Cleaning the String:**
+   - We use a generator expression with `join()` to filter out non-alphanumeric characters and convert everything to lowercase in one pass.
 
-- **Input:** `s = "race a car"`
-- **Output:** `False`
-- **Explanation:** After removing non-alphanumeric characters and ignoring case, the string becomes "raceacar", which does not read the same forwards and backwards.
+2. **Two Pointer Comparison:**
+   - The two pointers `left` and `right` start at the beginning and end of the cleaned string, respectively.
+   - For each step, we check if the characters at `left` and `right` are the same. If they are not, return `False` as it's not a palindrome.
+   - If we successfully move both pointers inward without finding any mismatch, return `True`.
 
-### High-Level Approach
+3. **Edge Case Handling:**
+   - An empty string (or a string that becomes empty after cleaning) is a valid palindrome.
 
-1. **Filter Alphanumeric Characters**: Convert the input string to a list of lowercase characters, keeping only alphanumeric characters. This step ensures that spaces and punctuation are ignored.
+### Example Calls:
 
-2. **Two-Pointer Technique**: Use two pointers, one starting at the beginning (`start`) and the other at the end (`end`) of the filtered list. Compare the characters at these positions. If they are not equal, the string is not a palindrome.
+#### Example 1:
+```python
+s = "A man, a plan, a canal: Panama"
+print(isPalindrome(s))  # Output: True
+# Explanation: After cleaning, the string becomes "amanaplanacanalpanama", which is a palindrome.
+```
 
-3. **Move Pointers**: If the characters match, move the `start` pointer forward and the `end` pointer backward, then repeat the comparison until the pointers meet or cross.
+#### Example 2:
+```python
+s = "race a car"
+print(isPalindrome(s))  # Output: False
+# Explanation: After cleaning, the string becomes "raceacar", which is not a palindrome.
+```
 
-4. **Check Palindrome**: If all corresponding characters match during the comparison, the string is a palindrome; otherwise, it is not.
+#### Example 3:
+```python
+s = " "
+print(isPalindrome(s))  # Output: True
+# Explanation: The cleaned string is empty, which is considered a valid palindrome.
+```
 
+### Time and Space Complexity:
+
+- **Time Complexity:** `O(n)`, where `n` is the length of the input string `s`. We iterate through the string twice: once to clean it and once to check for palindrome.
+- **Space Complexity:** `O(n)` for storing the cleaned version of the string.
+
+This solution efficiently checks if the string is a palindrome by removing non-alphanumeric characters, converting the string to lowercase, and then using the two-pointer technique to compare characters from both ends.
