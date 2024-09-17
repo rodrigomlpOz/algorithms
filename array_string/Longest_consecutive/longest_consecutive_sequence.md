@@ -5,9 +5,8 @@ You must write an algorithm that runs in **O(n)** time.
 
 ### Function Definition:
 ```python
-class Solution:
-    def longestConsecutive(self, nums: list[int]) -> int:
-        # Function to return the length of the longest consecutive sequence
+def longestConsecutive(self, nums: list[int]) -> int:
+# Function to return the length of the longest consecutive sequence
 ```
 
 ### Example 1:

@@ -9,20 +9,35 @@ class Solution:
     
     def decode(self, s: str) -> list[str]:
         # Decodes a single string to a list of strings
-```
 
-### Example 1:
-```python
-Input: ["neet", "code", "love", "you"]
-Output: ["neet", "code", "love", "you"]
-```
+# Initialize the Solution class
+solution = Solution()
 
-### Example 2:
-```python
-Input: ["we", "say", ":", "yes"]
-Output: ["we", "say", ":", "yes"]
-```
+# Example 1
+input1 = ["neet", "code", "love", "you"]
+print(f"Input: {input1}")
 
+# Encode
+encoded1 = solution.encode(input1)
+print(f"Encoded: {encoded1}")
+
+# Decode
+decoded1 = solution.decode(encoded1)
+print(f"Decoded: {decoded1}\n")
+
+# Example 2
+input2 = ["we", "say", ":", "yes"]
+print(f"Input: {input2}")
+
+# Encode
+encoded2 = solution.encode(input2)
+print(f"Encoded: {encoded2}")
+
+# Decode
+decoded2 = solution.decode(encoded2)
+print(f"Decoded: {decoded2}")
+
+```
 ### Constraints:
 - `0 <= strs.length < 100`
 - `0 <= strs[i].length < 200`
