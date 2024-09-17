@@ -15,6 +15,31 @@ def majorityElement(nums: List[int]) -> int:
     :return: int - The majority element
     """
     # Your code here
+
+nums1 = [2, 2, 1, 1, 1, 2, 2]
+print(f"Calling majorityElement with input: {nums1}")
+result1 = majorityElement(nums1)
+print(f"Majority element is: {result1}\n")
+
+nums2 = [3, 3, 4, 2, 4, 4, 2, 4, 4]
+print(f"Calling majorityElement with input: {nums2}")
+result2 = majorityElement(nums2)
+print(f"Majority element is: {result2}\n")
+
+nums3 = [1]
+print(f"Calling majorityElement with input: {nums3}")
+result3 = majorityElement(nums3)
+print(f"Majority element is: {result3}\n")
+
+nums4 = [6, 5, 5]
+print(f"Calling majorityElement with input: {nums4}")
+result4 = majorityElement(nums4)
+print(f"Majority element is: {result4}\n")
+
+nums5 = [8, 8, 7, 7, 7, 8, 8, 8]
+print(f"Calling majorityElement with input: {nums5}")
+result5 = majorityElement(nums5)
+print(f"Majority element is: {result5}\n")
 ```
 
 ### High-Level Approach:
