@@ -1,3 +1,4 @@
+#we need to check for duplicates because of the fact we need 
 def threeSum(nums):
     nums.sort()  # Sort the array
     result = []
