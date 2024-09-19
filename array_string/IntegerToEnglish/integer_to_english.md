@@ -12,9 +12,13 @@ def numberToWords(num: int) -> str:
     :param num: int - A non-negative integer
     :return: str - English words representation of the integer
     """
-    # Your code here
-```
+    below_20 = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", 
+                "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", 
+                "Eighteen", "Nineteen"]
+    tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
+    thousands = ["", "Thousand", "Million", "Billion"]
 
+```
 ### Approach:
 
 1. **Edge Case:** If `num` is 0, return `"Zero"`.
