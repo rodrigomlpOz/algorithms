@@ -1,7 +1,3 @@
-Certainly! Here's a comprehensive breakdown of **LeetCode Problem 28: "Find the Index of the First Occurrence in a String"** tailored in **Python**. This includes the **Problem Definition**, **Function Definition**, **Function Calls**, and an expanded **High-Level Solution** that now incorporates the **Sliding Window Approach** alongside other methods.
-
----
-
 ## **Problem Definition**
 
 **Objective:**
