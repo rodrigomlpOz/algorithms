@@ -10,6 +10,18 @@ The `Vector2D` class will be initialized with a 2D vector `v` and should provide
 ### Example
 
 ```python
+
+class Vector2D:
+    def __init__(self, v: List[List[int]]):
+        pass
+
+    def next(self) -> int:
+        pass
+
+    def hasNext(self) -> bool:
+        pass
+
+
 v = [
     [1, 2],
     [3],
