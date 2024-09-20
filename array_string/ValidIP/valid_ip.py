@@ -3,8 +3,6 @@ def validIPAddress(self, queryIP: str) -> str:
     # Function to validate if queryIP is IPv4
     def is_valid_ipv4(ip: str) -> bool:
         parts = ip.split(".")
-        if len(parts) != 4:
-            return False
         for part in parts:
             # Check if part is a digit, and no leading zeros unless it's "0"
             if not part.isdigit() or not 0 <= int(part) <= 255 or (part[0] == '0' and len(part) > 1):
@@ -14,8 +12,6 @@ def validIPAddress(self, queryIP: str) -> str:
     # Function to validate if queryIP is IPv6
     def is_valid_ipv6(ip: str) -> bool:
         parts = ip.split(":")
-        if len(parts) != 8:
-            return False
         for part in parts:
             # Check length and valid hex digits
             if not (1 <= len(part) <= 4) or not all(c in string.hexdigits for c in part):

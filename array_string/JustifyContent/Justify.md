@@ -1,7 +1,3 @@
-Absolutely! I'm glad you found the step-by-step walkthrough helpful. Below is the comprehensive guide to the **Text Justification** problem, including the **Problem Description**, **Function Definition**, **Function Implementation**, **Function Calls** (with `print` statements), and the detailed **Step-by-Step Walkthrough** using **Example 1**.
-
----
-
 ## **Text Justification Comprehensive Guide**
 
 ### **1. Problem Description**
@@ -21,6 +17,7 @@ Given an array of words and a maximum width `maxWidth`, format the text such tha
   - Each word consists of non-space characters only.
   - Each word's length is guaranteed to be greater than 0 and not exceed `maxWidth`.
   - The input array `words` contains at least one word.
+
 
 **Examples:**
 
@@ -90,48 +87,6 @@ def fullJustify(words: List[str], maxWidth: int) -> List[str]:
 ### **3. Function Implementation**
 
 Below is the complete Python implementation of the `fullJustify` function based on the high-level solution.
-
-```python
-from typing import List
-
-def fullJustify(words: List[str], maxWidth: int) -> List[str]:
-    result = []             # To store the final justified text
-    current_line = []       # To store words for the current line
-    num_of_letters = 0      # Total number of letters in current_line
-
-    for word in words:
-        # Check if adding the new word exceeds the maxWidth
-        if num_of_letters + len(word) + len(current_line) > maxWidth:
-            if len(current_line) == 1:
-                # If there's only one word in the line, left-justify it
-                line = current_line[0] + ' ' * (maxWidth - num_of_letters)
-            else:
-                # Calculate the total number of spaces to distribute
-                total_spaces = maxWidth - num_of_letters
-                space_between_words, extra_spaces = divmod(total_spaces, len(current_line) - 1)
-                
-                line = ''
-                for i in range(len(current_line) - 1):
-                    # Assign an extra space to the left slots
-                    spaces_to_add = space_between_words + (1 if i < extra_spaces else 0)
-                    line += current_line[i] + ' ' * spaces_to_add
-                line += current_line[-1]  # Add the last word without extra spaces
-            result.append(line)
-            # Reset for the next line
-            current_line = []
-            num_of_letters = 0
-        # Add the current word to the line
-        current_line.append(word)
-        num_of_letters += len(word)
-    
-    # Handle the last line: left-justified
-    last_line = ' '.join(current_line)
-    spaces_to_add = maxWidth - len(last_line)
-    last_line += ' ' * spaces_to_add
-    result.append(last_line)
-    
-    return result
-```
 
 ---
 
@@ -451,61 +406,84 @@ maxWidth = 16
     - **Time Complexity**: O(N), where N is the number of words. Each word is processed exactly once.
     - **Space Complexity**: O(N), for storing the result and temporary variables.
 
----
+Great question! Let's delve into **why the word `"example"` isn't included in the first line** of your justified text given the `maxWidth` of 16.
 
-### **7. Additional Example for Clarity**
+### **Understanding the Constraints**
 
-Let's consider another example to reinforce understanding.
-
-**Input:**
+Your list of words:
 ```python
-words = ["What","must","be","acknowledgment","shall","be"]
+words = ["This", "is", "an", "example", "of", "text", "justification."]
+```
+And your `maxWidth`:
+```python
 maxWidth = 16
 ```
 
-**Expected Output:**
+**Objective:** Arrange the words into lines where each line has exactly `maxWidth` characters, distributing spaces as evenly as possible.
+
+### **Step-by-Step Breakdown**
+
+1. **Initial State:**
+   - `current_line = []`
+   - `num_of_letters = 0`
+   - `result = []`
+
+2. **Adding Words to the First Line:**
+   - **Add `"This"`:**
+     - `current_line = ["This"]`
+     - `num_of_letters = 4`
+   - **Add `"is"`:**
+     - Check: `4 (num_of_letters) + 2 (len("is")) + 1 (len(current_line)) = 7 ≤ 16`
+     - **Add `"is"`:**
+       - `current_line = ["This", "is"]`
+       - `num_of_letters = 6`
+   - **Add `"an"`:**
+     - Check: `6 (num_of_letters) + 2 (len("an")) + 2 (len(current_line)) = 10 ≤ 16`
+     - **Add `"an"`:**
+       - `current_line = ["This", "is", "an"]`
+       - `num_of_letters = 8`
+   - **Attempt to Add `"example"`:**
+     - Check: `8 (num_of_letters) + 7 (len("example")) + 3 (len(current_line)) = 18 > 16`
+     - **Cannot add `"example"`** to the current line as it would exceed `maxWidth`.
+
+### **Why Adding `"example"` Exceeds `maxWidth`**
+
+- **Total Letters if `"example"` is Added:** `4 (This) + 2 (is) + 2 (an) + 7 (example) = 15`
+- **Minimum Spaces Required:** 
+  - Between `"This"` and `"is"`: 1 space
+  - Between `"is"` and `"an"`: 1 space
+  - Between `"an"` and `"example"`: 1 space
+  - **Total Minimum Spaces:** 3
+- **Total Characters:** `15 (letters) + 3 (spaces) = 18`
+- **Comparison with `maxWidth`:** `18 > 16`
+
+Since `18` exceeds the `maxWidth` of `16`, `"example"` **cannot** be included in the first line.
+
+### **Visual Representation**
+
+Let's visualize the first line without `"example"`:
+
 ```
-[
-    "What   must   be",
-    "acknowledgment  ",
-    "shall be        "
-]
+"This    is    an"
 ```
 
-**Processing Steps:**
+- **Letters:** 4 (`This`) + 2 (`is`) + 2 (`an`) = 8
+- **Spaces Distributed:** 16 (maxWidth) - 8 (letters) = 8 spaces
+  - Between `"This"` and `"is"`: 4 spaces
+  - Between `"is"` and `"an"`: 4 spaces
+- **Total Characters:** 8 (letters) + 8 (spaces) = 16
 
-1. **First Line:**
-    - **Words**: ["What", "must", "be"]
-    - **Total Letters**: 4 + 4 + 2 = 10
-    - **Spaces to Distribute**: 16 - 10 = 6
-    - **Gaps**: 2
-    - **Space Distribution**:
-        - `space_between_words = 6 // 2 = 3`
-        - `extra_spaces = 6 % 2 = 0`
-    - **Line**: "What" + 3 spaces + "must" + 3 spaces + "be" = `"What   must   be"`
+### **Attempting to Include `"example"`**
 
-2. **Second Line:**
-    - **Words**: ["acknowledgment"]
-    - **Total Letters**: 14
-    - **Spaces to Distribute**: 16 - 14 = 2
-    - **Line**: "acknowledgment" + 2 spaces = `"acknowledgment  "`
+If we try to include `"example"`:
 
-3. **Third Line (Last Line):**
-    - **Words**: ["shall", "be"]
-    - **Total Letters**: 5 + 2 = 7
-    - **Spaces to Distribute**: 16 - 7 - 1 = 8 (1 space between words)
-    - **Line**: "shall" + 1 space + "be" + 8 spaces = `"shall be        "`
-
-**Final Output:**
 ```
-[
-    "What   must   be",
-    "acknowledgment  ",
-    "shall be        "
-]
+"This    is    an example"
 ```
 
----
+- **Letters:** 4 + 2 + 2 + 7 = 15
+- **Minimum Spaces:** 3
+- **Total Characters:** 15 + 3 = 18 > 16
 
 ## **Conclusion**
 

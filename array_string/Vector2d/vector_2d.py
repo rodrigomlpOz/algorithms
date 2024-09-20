@@ -1,30 +1,54 @@
 class Vector2D:
-    def __init__(self, v):
-        self.vector = v
-        self.outer = 0
-        self.inner = 0
-        self.advance_to_next_nonempty()
+    def __init__(self, matrix):
+        """
+        Initializes the Vector2D with a 2D vector (list of lists).
+        
+        Args:
+            matrix (List[List[int]]): The 2D vector to iterate over.
+        """
+        self.matrix = matrix      # The 2D vector to iterate
+        self.row = 0              # Index for the current row (outer list)
+        self.col = 0              # Index for the current column (inner list)
+        self._move_to_next_available()
 
-    def advance_to_next_nonempty(self):
-        # This method advances the outer and inner indices to point to the next
-        # non-empty sub-list element. If the current sub-list is exhausted or empty,
-        # it moves to the next sub-list until it finds a valid position or reaches the end.
-        while self.outer < len(self.vector) and self.inner >= len(self.vector[self.outer]):
-            self.outer += 1
-            self.inner = 0
+    def _move_to_next_available(self):
+        """
+        Advances the row and column indices to point to the next available element.
+        Skips any empty sublists or exhausted rows.
+        """
+        while self.row < len(self.matrix):
+            # Check if the current row has elements remaining
+            if self.col < len(self.matrix[self.row]):
+                break  # Found a valid position
+            # Move to the next row
+            self.row += 1
+            self.col = 0  # Reset column index for the new row
 
-    def next(self):
-        # Returns the next element in the 2D vector and advances the indices.
-        if not self.hasNext():
-            raise Exception("No more elements")
-        result = self.vector[self.outer][self.inner]
-        self.inner += 1
-        self.advance_to_next_nonempty()  # Prepare indices for the next call
-        return result
+    def next_element(self):
+        """
+        Returns the next element in the 2D vector and advances the indices.
+        
+        Returns:
+            int: The next integer in the 2D vector.
+        
+        Raises:
+            StopIteration: If there are no more elements to return.
+        """
+        if not self.has_next():
+            raise StopIteration("No more elements")
+        
+        # Retrieve the current element
+        current_value = self.matrix[self.row][self.col]
+        self.col += 1  # Move to the next element in the current row
+        self._move_to_next_available()  # Prepare indices for the next call
+        return current_value
 
-    def hasNext(self):
-        # Checks if there are more elements available in the vector.
-        # This method ensures that the indices point to a valid element or the end.
-        self.advance_to_next_nonempty()
-        return self.outer < len(self.vector)
-
+    def has_next(self):
+        """
+        Checks if there are more elements to iterate over in the 2D vector.
+        
+        Returns:
+            bool: True if there are more elements, False otherwise.
+        """
+        self._move_to_next_available()  # Ensure indices are at a valid position
+        return self.row < len(self.matrix)
