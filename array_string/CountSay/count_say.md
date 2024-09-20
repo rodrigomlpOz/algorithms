@@ -23,6 +23,17 @@ Given an integer `n`, generate the nth term of the count-and-say sequence.
 def countAndSay(n: int) -> str:
   pass
 
+print(countAndSay(1))  # Output: "1"
+print(countAndSay(2))  # Output: "11"
+print(countAndSay(3))  # Output: "21"
+print(countAndSay(4))  # Output: "1211"
+print(countAndSay(5))  # Output: "111221"
+print(countAndSay(6))  # Output: "312211"
+print(countAndSay(7))  # Output: "13112221"
+print(countAndSay(8))  # Output: "1113213211"
+print(countAndSay(9))  # Output: "31131211131221"
+print(countAndSay(10)) # Output: "13211311123113112211"
+
 # Example 1: Generate the 5th term
 n = 5
 print(f"Calling count_and_say({n})")

@@ -9,6 +9,7 @@ def calculate(s):
                 elif sign == "-":
                     stack.append(-num)
                 elif sign == "*":
+
                     stack.append(stack.pop()*num)
                 else:
                     stack.append(int(stack.pop()/num))
@@ -21,7 +22,7 @@ print(calculate(" 3/2 "))        # Output: 1
 print(calculate(" 3+5 / 2 "))    # Output: 5
 print(calculate("10+2*6"))       # Output: 22
 print(calculate("100*2+12"))     # Output: 212
-print(calculate("100*(2+12)/14"))# Output: 100
+print(calculate("100*(2+12)/14"))# Output: 200
 print(calculate("1+1+1"))        # Output: 3
 print(calculate("1-1+1"))        # Output: 1
 print(calculate("14-3/2"))       # Output: 13

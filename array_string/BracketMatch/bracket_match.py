@@ -1,4 +1,4 @@
-def bracket_match(text):
+def bracketMatch(text):
     open_brackets = 0  # Tracks unbalanced opening brackets
     unmatched_closing = 0  # Tracks unmatched closing brackets
     
@@ -16,7 +16,7 @@ def bracket_match(text):
 
 
 # Test cases
-print(bracketMatch("((("))  # Expected output: 3
+print(bracketMatch("(((")) # Expected output: 3
 print(bracketMatch("(()"))  # Expected output: 1
 print(bracketMatch(")("))   # Expected output: 2
 print(bracketMatch("()"))   # Expected output: 0

@@ -3,7 +3,23 @@ The **3Sum** problem is a classic algorithmic challenge commonly asked in coding
 ### Problem Statement:
 Given an array of integers `nums`, find all unique triplets `(a, b, c)` in the array such that:
 ```
-a + b + c = 0
+from typing import List
+
+def threeSum(nums: List[int]) -> List[List[int]]:
+    # Implementation here
+
+
+# Example 1
+nums1 = [-1, 0, 1, 2, -1, -4]
+print(threeSum(nums1))  # Output: [[-1, -1, 2], [-1, 0, 1]]
+
+# Example 2
+nums2 = [0, 1, 1]
+print(threeSum(nums2))  # Output: []
+
+# Example 3
+nums3 = [0, 0, 0]
+print(threeSum(nums3))  # Output: [[0, 0, 0]]
 ```
 and avoid including duplicate triplets.
 
@@ -21,39 +37,6 @@ and avoid including duplicate triplets.
      - If the sum is greater than zero, move the `right` pointer to the left to decrease the sum.
 
 4. **Avoid Duplicates:** Skip over duplicate values for the fixed element and the left pointer to avoid counting the same triplet multiple times.
-
-### Code Example (in Python):
-
-```python
-def threeSum(nums):
-    nums.sort()  # Sort the array
-    result = []
-    
-    for i in range(len(nums) - 2):
-        if i > 0 and nums[i] == nums[i - 1]:  # Skip duplicate elements
-            continue
-        
-        left, right = i + 1, len(nums) - 1
-        while left < right:
-            total = nums[i] + nums[left] + nums[right]
-            if total == 0:
-                result.append([nums[i], nums[left], nums[right]])
-                
-                # Skip duplicates for the left and right pointers
-                while left < right and nums[left] == nums[left + 1]:
-                    left += 1
-                while left < right and nums[right] == nums[right - 1]:
-                    right -= 1
-                
-                left += 1
-                right -= 1
-            elif total < 0:
-                left += 1
-            else:
-                right -= 1
-    
-    return result
-```
 
 ### Time Complexity:
 - Sorting the array takes **O(n log n)**.

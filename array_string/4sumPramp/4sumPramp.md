@@ -15,26 +15,6 @@ def findArrayQuadruplet(arr: List[int], s: int) -> List[int]:
     # Function implementation
 ```
 
-#### C++
-```cpp
-#include <vector>
-
-std::vector<int> findArrayQuadruplet(std::vector<int>& arr, int s) {
-    // Function implementation
-}
-```
-
-#### C#
-```csharp
-using System.Collections.Generic;
-
-public class Solution {
-    public List<int> findArrayQuadruplet(List<int> arr, int s) {
-        // Function implementation
-    }
-}
-```
-
 These signatures provide a starting point for implementing the `findArrayQuadruplet` function in each respective language. The function is expected to take a list (or vector) of integers `arr` and an integer `s`, and return a list (or vector) of integers representing the quadruplet that sums up to `s` in ascending order, or an empty list (or vector) if no such quadruplet exists.
 
 #### Example

@@ -24,7 +24,7 @@ def addBinary(a: str, b: str) -> str:
         j -= 1
     
     # Since we are appending bits from right to left, reverse the result
-    return ''.join(result[::-1])
+    return ''.join(reversed(result))
 
 
 a = "11"

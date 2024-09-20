@@ -16,7 +16,52 @@ def setZeroes(matrix: List[List[int]]) -> None:
     :param matrix: List[List[int]] - The input 2D matrix
     :return: None - The matrix is modified in-place
     """
-    # Your code here
+    is_zero_row = False
+    is_zero_col = False
+    #check first col
+    for i in range(len(matrix)):
+        if matrix[i][0] == 0:
+            is_zero_col = 0
+    
+    for j in range(len(matrix[0])):
+        if matrix[0][j] == 0:
+            is_zero_row = 0
+
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            if matrix[i][j] = 0:
+                matrix[0][j] = 0
+                matrix[i][0] = 0
+
+    #check first col
+    for i in range(1, len(matrix)):
+        if matrix[i][0] == 0:
+            for j in range(0, len(matrix[0])):
+                matrix[i][j] = 0
+
+    for j in range(1, len(matrix)):
+        if matrix[0][j] == 0:
+            for i in range(0, len(matrix)):
+                matrix[i][j] = 0
+        
+
+
+    #check first col
+
+
+matrix = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8]
+]
+setZeroes(matrix)
+
+matrix = [
+    [0, 2, 3],
+    [4, 5, 0],
+    [7, 8, 9]
+]
+setZeroes(matrix)
 ```
 
 ### High-Level Description:
@@ -37,48 +82,7 @@ To solve this problem, we can approach it in two ways:
 ### Code Implementation:
 
 ```python
-def setZeroes(matrix: List[List[int]]) -> None:
-    rows, cols = len(matrix), len(matrix[0])
-    first_row_zero = False
-    first_col_zero = False
 
-    # Step 1: Determine if the first row or first column needs to be zero
-    for i in range(rows):
-        if matrix[i][0] == 0:
-            first_col_zero = True
-            break
-    
-    for j in range(cols):
-        if matrix[0][j] == 0:
-            first_row_zero = True
-            break
-
-    # Step 2: Use the first row and column as markers for other rows and columns
-    for i in range(1, rows):
-        for j in range(1, cols):
-            if matrix[i][j] == 0:
-                matrix[i][0] = 0
-                matrix[0][j] = 0
-
-    # Step 3: Set matrix cells to zero based on the markers
-    for i in range(1, rows):
-        if matrix[i][0] == 0:
-            for j in range(1, cols):
-                matrix[i][j] = 0
-
-    for j in range(1, cols):
-        if matrix[0][j] == 0:
-            for i in range(1, rows):
-                matrix[i][j] = 0
-
-    # Step 4: Handle the first row and first column separately
-    if first_row_zero:
-        for j in range(cols):
-            matrix[0][j] = 0
-    
-    if first_col_zero:
-        for i in range(rows):
-            matrix[i][0] = 0
 ```
 
 ### High-Level Steps:
