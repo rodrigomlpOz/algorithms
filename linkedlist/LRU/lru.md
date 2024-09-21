@@ -189,3 +189,34 @@ Consider the following operations for an LRU cache with capacity 2:
 
 By leveraging both a **HashMap** for quick access and a **Doubly Linked List** for maintaining order and efficient removal/insertion, you ensure an optimal LRU Cache solution.
 
+
+Using a `defaultdict` instead of a regular dictionary `{}` might not offer much benefit in the context of the **LRU Cache** implementation because a `defaultdict` is primarily useful when you want to provide a default value for a missing key. In an LRU cache, you typically don’t want to provide default values for missing keys — you either return the value for an existing key, or return `-1` if the key is not found (for the `get` operation).
+
+### Why `defaultdict` is not ideal in this case:
+1. **Key Lookup Behavior**: In an LRU Cache, if the key doesn't exist, you want to return `-1` for a `get()` operation, not a default value like `0` or an empty node. With `defaultdict`, you would need to handle or suppress the default value to avoid unintended behavior.
+  
+2. **Inserting with `put()`**: When you call `put()`, you’re explicitly creating new nodes and inserting them into the cache. You don’t need a default value in this case since each insertion is intentional.
+
+### Example Problem with `defaultdict`:
+
+If you use `defaultdict` with a default value for missing keys, you may inadvertently add new entries when the key doesn’t exist, which is not what you want in an LRU Cache (you want to return `-1` for `get()` if the key isn't found).
+
+```python
+from collections import defaultdict
+
+cache = defaultdict(int)  # Default value will be `0` for any missing key
+
+print(cache[1])  # Outputs 0, but in LRU cache you want -1
+```
+
+In the context of an LRU Cache, you don’t want the cache to automatically create a value if it doesn’t exist, which is the behavior of a `defaultdict`. You want explicit control over key insertion and deletion.
+
+### When to use `defaultdict`:
+- `defaultdict` is great for situations where you want a default behavior for missing keys, such as counting items in a list (`defaultdict(int)`), or creating lists of values for keys (`defaultdict(list)`).
+- In an LRU Cache, missing keys should be treated as an error (return `-1`), so a standard dictionary is the better choice.
+
+### Conclusion:
+For the **LRU Cache**, stick with a regular dictionary `{}` for explicit key management. If a key is missing, the cache should return `-1`, not a default value, making `defaultdict` unnecessary in this case.
+
+
+
