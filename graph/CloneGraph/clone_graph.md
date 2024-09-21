@@ -40,6 +40,9 @@ class GraphVertex:
     def __init__(self, label):
         self.label = label
         self.edges = []
+
+def clone_graph():
+    pass
 ```
 
 - `GraphVertex`: Represents a node in the graph. Each node has a `label` and a list of `edges` (its neighbors).
