@@ -5,9 +5,8 @@ The **h-index** is defined as the maximum value `h` such that the researcher has
 
 ### Function Definition:
 ```python
-class Solution:
-    def hIndex(self, citations: list[int]) -> int:
-        # Function to calculate the h-index of a researcher
+def hIndex(citations: list[int]) -> int:
+    # Function to calculate the h-index of a researcher
 ```
 
 ### Approach:
@@ -45,6 +44,63 @@ print(solution.hIndex(citations2))  # Output: 1
 1. Sort the citations in descending order.
 2. For each paper, check if the number of papers that have at least `i + 1` citations is greater than or equal to the value of `i + 1`.
 3. Return the largest such value of `h` (h-index).
+
+
+Let's illustrate each iteration with the sorted citation array and show how the h-index is computed step by step.
+
+### **Given Array:**
+```python
+citations = [10, 8, 5, 4, 3]
+```
+
+### **Sorted Array:**
+```python
+citations = [10, 8, 5, 4, 3]
+```
+
+### **Iteration Breakdown:**
+
+1. **Iteration 1:**
+   - **Citation Array:** `[10, 8, 5, 4, 3]`
+   - **Index (`i`):** 0
+   - **Citation Count (`num`):** 10
+   - **`i + 1`:** 1
+   - **Condition (`num >= i + 1`):** `10 >= 1` → **True**
+   - **h-index:** 1
+   
+2. **Iteration 2:**
+   - **Citation Array:** `[10, 8, 5, 4, 3]`
+   - **Index (`i`):** 1
+   - **Citation Count (`num`):** 8
+   - **`i + 1`:** 2
+   - **Condition (`num >= i + 1`):** `8 >= 2` → **True**
+   - **h-index:** 2
+
+3. **Iteration 3:**
+   - **Citation Array:** `[10, 8, 5, 4, 3]`
+   - **Index (`i`):** 2
+   - **Citation Count (`num`):** 5
+   - **`i + 1`:** 3
+   - **Condition (`num >= i + 1`):** `5 >= 3` → **True**
+   - **h-index:** 3
+
+4. **Iteration 4:**
+   - **Citation Array:** `[10, 8, 5, 4, 3]`
+   - **Index (`i`):** 3
+   - **Citation Count (`num`):** 4
+   - **`i + 1`:** 4
+   - **Condition (`num >= i + 1`):** `4 >= 4` → **True**
+   - **h-index:** 4
+
+5. **Iteration 5:**
+   - **Citation Array:** `[10, 8, 5, 4, 3]`
+   - **Index (`i`):** 4
+   - **Citation Count (`num`):** 3
+   - **`i + 1`:** 5
+   - **Condition (`num >= i + 1`):** `3 >= 5` → **False**
+   - **Break the loop, final h-index is 4.**
+
+This breakdown matches the earlier table, and the h-index is calculated to be **4**.
 
 ### Time Complexity:
 - **O(n log n)** due to sorting the citations list.
