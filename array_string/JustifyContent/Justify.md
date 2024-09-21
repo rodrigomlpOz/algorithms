@@ -6,6 +6,9 @@
 
 Given an array of words and a maximum width `maxWidth`, format the text such that each line has exactly `maxWidth` characters and is fully (both left and right) justified.
 
+Fors the last line, words should be separated by a single space (if there is more than one word).
+Any extra spaces required to fill the line to the required width (maxWidth) should be added at the end of the line.
+
 **Requirements:**
 
 - **Greedy Approach**: Pack as many words as possible in each line without exceeding `maxWidth`.
