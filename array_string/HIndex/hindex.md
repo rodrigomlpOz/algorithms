@@ -5,9 +5,8 @@ The **h-index** is defined as the maximum value `h` such that the researcher has
 
 ### Function Definition:
 ```python
-class Solution:
-    def hIndex(self, citations: list[int]) -> int:
-        # Function to calculate the h-index of a researcher
+def hIndex(citations: list[int]) -> int:
+    # Function to calculate the h-index of a researcher
 ```
 
 ### Approach:
