@@ -117,4 +117,75 @@ This solution ensures that both **get** and **put** operations run in constant t
   - For `put(key, value)`:
     - If the key already exists, update its value and move it to the end of the ordered dictionary.
     - If the key doesn't exist, insert it. If the cache exceeds capacity, remove the first (least recently used) key-value pair from the ordered dictionary.
+   
+Using a **Doubly Linked List** in combination with a **HashMap** (dictionary) for implementing an **LRU Cache** has several key advantages:
+
+### 1. **Efficient Access to Cache Elements**:
+   - **HashMap** provides O(1) time complexity for accessing elements by key. However, a HashMap alone does not maintain the order of elements (especially the most and least recently used).
+   - The **Doubly Linked List** is used to maintain the order of usage. The most recently used elements are kept at the **head** of the list, and the least recently used elements are at the **tail**. 
+   - By combining both, you get efficient access to elements and the ability to maintain their usage order, both in constant time.
+
+### 2. **Fast Removal and Insertion of Nodes**:
+   - A **Doubly Linked List** allows O(1) time complexity for removing or inserting nodes at both the head (most recently used) and the tail (least recently used). 
+   - When a cache exceeds its capacity, the least recently used element (the tail) needs to be removed. In a doubly linked list, this can be done in constant time by adjusting the pointers of the adjacent nodes, unlike a singly linked list where removal from the middle or end takes O(n) time.
+   
+### 3. **Efficient Reordering of Elements**:
+   - When a cache element is accessed via a `get` operation, it becomes the most recently used, and we need to move it to the head of the linked list. 
+   - With a **Doubly Linked List**, once you find the node (via the HashMap), you can easily remove it from its current position and insert it at the head in constant time O(1), because both forward and backward pointers of the node can be updated efficiently.
+   - In a **Singly Linked List**, you'd need to traverse the list to find the previous node to update the pointers, making it less efficient for this purpose.
+
+### 4. **Maintaining Usage Order**:
+   - The linked list maintains the order of usage — from the least recently used (tail) to the most recently used (head). 
+   - **get()** operations move accessed elements to the head, and **put()** operations insert new elements at the head.
+   - The **tail** of the linked list always holds the least recently used element, which can be efficiently removed when the cache exceeds capacity.
+
+### Example Walkthrough:
+Consider the following operations for an LRU cache with capacity 2:
+   
+1. **put(1, 1)**:
+   - Insert (1, 1) into the cache. Add a new node with key `1` and value `1` to the **head** of the linked list and store a reference in the HashMap.
+   
+   **State**:
+   ```
+   Linked List: 1 <-> None
+   HashMap: {1: Node(1,1)}
+   ```
+
+2. **put(2, 2)**:
+   - Insert (2, 2) into the cache. Add a new node with key `2` and value `2` to the **head** of the linked list and store a reference in the HashMap.
+   
+   **State**:
+   ```
+   Linked List: 2 <-> 1 <-> None
+   HashMap: {1: Node(1,1), 2: Node(2,2)}
+   ```
+
+3. **get(1)**:
+   - Access key `1`. Move the corresponding node to the **head** of the list (it becomes the most recently used).
+   
+   **State**:
+   ```
+   Linked List: 1 <-> 2 <-> None
+   HashMap: {1: Node(1,1), 2: Node(2,2)}
+   ```
+
+4. **put(3, 3)**:
+   - Cache is full (capacity is 2). Insert key `3` and value `3`. To make room, remove the **tail** node (key `2`), which is the least recently used. Insert a new node with key `3` at the **head** of the list.
+   
+   **State**:
+   ```
+   Linked List: 3 <-> 1 <-> None
+   HashMap: {1: Node(1,1), 3: Node(3,3)}
+   ```
+
+5. **get(2)**:
+   - Key `2` is not in the cache, so return `-1`.
+
+### Advantages of Combining HashMap and Doubly Linked List:
+1. **O(1) Time Complexity** for both `get` and `put` operations.
+2. **Constant-Time Deletion and Insertion** at the head or tail of the list using the doubly linked list.
+3. **Efficient Reordering** of recently accessed elements by moving nodes to the head of the list.
+4. **Space Efficiency**: The use of a doubly linked list and hashmap ensures that only the necessary nodes are stored and efficiently managed without wasted space.
+
+By leveraging both a **HashMap** for quick access and a **Doubly Linked List** for maintaining order and efficient removal/insertion, you ensure an optimal LRU Cache solution.
 
