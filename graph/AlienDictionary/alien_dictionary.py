@@ -1,59 +1,64 @@
-'''
-https://leetcode.com/problems/alien-dictionary/
-'''
-class Solution(object):
-    def add_vertices(self, w, graph):
-        for ch in w:
-            if ch not in graph:
-                graph[ch] = set([])        
-        return
-    
-    def add_words_to_graph(self, graph, w1, w2):
-        self.add_vertices(w1, graph)
-        self.add_vertices(w2, graph)        
-        min_length = min(len(w1), len(w2))
-        found = False
+from collections import defaultdict
+
+def alienOrder(words):
+    graph = defaultdict(list)
+    visiting = set()  # Nodes currently in the DFS path
+    visited = set()   # Nodes that have been fully processed
+    result = []       # Stack to store the topological order (in reverse)
+
+    # Build graph by comparing adjacent words
+    def buildEdge(word1, word2):
+        min_length = min(len(word1), len(word2))
         for i in range(min_length):
-            if w1[i] != w2[i]:
-                graph[w1[i]].add(w2[i])
-                found = True
+            if word1[i] != word2[i]:
+                graph[word1[i]].append(word2[i])
                 break
-        if found == False and len(w1) > len(w2):
-            return False # "abstract", "abs" is an error. But "abs", "abstract" is perfectly fine.
+        # If word2 is a prefix of word1, the order is invalid
+        if len(word2) < len(word1) and word1.startswith(word2):
+            return False
         return True
-
-    def build_graph(self, words):
-        graph = {}
-        for i in range(len(words)-1):
-            w1, w2 = words[i], words[i+1]
-            if not self.add_words_to_graph(graph, w1, w2):
-                return {}
-        self.add_vertices(words[-1], graph)
-        return graph
-
-    def topo_dfs(self, x, graph, visited, visiting, ans): # Return True if there is a cycle
-        if x in visiting:
-            return True
-        visiting.add(x)
-        for nei in graph[x]:
-            if nei not in visited and self.topo_dfs(nei, graph, visited, visiting, ans):
-                return True
-        visiting.remove(x)
-        ans.append(x)
-        visited.add(x)
-        return False
-
-    def alienOrder(self, words):
-        """
-        :type words: List[str]
-        :rtype: str
-        """
-        if words == []:
+    
+    # Build the graph edges
+    for i in range(1, len(words)):
+        if not buildEdge(words[i-1], words[i]):
             return ""
-        graph = self.build_graph(words)
-        visited, visiting, st = set([]), set([]), []
-        for k in graph.keys():
-            if k not in visited and self.topo_dfs(k, graph, visited, visiting, st):
-                    return ""
-        st.reverse()
-        return "".join(st)
+    
+    # DFS to visit nodes
+    def dfs(node):
+        if node in visiting:  # Cycle detected
+            return False
+        if node in visited:  # Already processed, no need to visit again
+            return True
+        
+        # Mark the node as bxeing visited
+        visiting.add(node)
+        
+        # Visit all the neighbors (recursive DFS)
+        for neighbor in graph[node]:
+            if not dfs(neighbor):
+                return False
+        
+        # Mark the node as fully processed
+        visiting.remove(node)
+        visited.add(node)
+        
+        # Add the node to the result (stack) in reverse order
+        result.append(node)
+        return True
+    
+    # Initialize graph with all unique characters
+    unique_chars = set(''.join(words))
+    
+    # Perform DFS on each unvisited node
+    for char in unique_chars:
+        if char not in visited:
+            if not dfs(char):
+                return ""  # Cycle detected, return empty string
+    
+    # The result list will contain the reverse topological order, so reverse it
+    return ''.join(result[::-1])
+
+# Test the function
+words = ["wrt", "wrf", "er", "ett", "rftt"]
+result = alienOrder(words)
+print(result)  # Expected output: "wertf"

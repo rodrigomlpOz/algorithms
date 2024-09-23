@@ -12,6 +12,8 @@ def copyRandomList(head):
     prev_copy = None
 
     # **First pass:** Create copies and assign 'next' pointers
+    # at the time you encounter a node, the random pointer of 
+    # that node could point to another node further in the list, whose copy has not yet been created.
     while current:
         copy = Node(current.val)
         old_to_new[current] = copy

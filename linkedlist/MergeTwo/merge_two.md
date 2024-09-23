@@ -8,9 +8,8 @@ class ListNode:
         self.val = val
         self.next = next
 
-class Solution:
-    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        pass
+def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+    pass
 ```
 
 ### Example Calls:
@@ -21,7 +20,7 @@ class Solution:
 
 l1 = ListNode(1, ListNode(2, ListNode(4)))
 l2 = ListNode(1, ListNode(3, ListNode(4)))
-result = Solution().mergeTwoLists(l1, l2)
+result = mergeTwoLists(l1, l2)
 
 # Example 2:
 # Input: l1 = None, l2 = None
@@ -29,7 +28,7 @@ result = Solution().mergeTwoLists(l1, l2)
 
 l1 = None
 l2 = None
-result = Solution().mergeTwoLists(l1, l2)
+result = mergeTwoLists(l1, l2)
 
 # Example 3:
 # Input: l1 = None, l2 = 0
@@ -37,7 +36,7 @@ result = Solution().mergeTwoLists(l1, l2)
 
 l1 = None
 l2 = ListNode(0)
-result = Solution().mergeTwoLists(l1, l2)
+result = mergeTwoLists(l1, l2)
 ```
 
 ### High-Level Solution:

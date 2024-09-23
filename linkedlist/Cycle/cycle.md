@@ -5,16 +5,14 @@ A cycle occurs when a node's `next` pointer points to one of the previous nodes,
 
 ### Function Definition:
 ```python
-def hasCycle(head: ListNode) -> bool:
-    """
-    Determines if a linked list has a cycle.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
-    Args:
-    head (ListNode): The head of the linked list.
-
-    Returns:
-    bool: True if there is a cycle, False otherwise.
-    """
+def has_cycle(n: ListNode) -> ListNode:
+    # Function implementation goes here
+    pass
 ```
 
 ### High-Level Approach (Two-pointer or Floyd’s Cycle Detection Algorithm):
@@ -32,6 +30,17 @@ To detect a cycle in a linked list, we can use two pointers (often called the **
 4. If the `fast` pointer reaches the end (`None`), return `False` because there is no cycle.
 
 ### Python Code Implementation:
+
+```python
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def add_list(L1: ListNode, L2: ListNode) -> ListNode:
+    # Function implementation goes here
+    pass
+```
 
 
 ### Example Usage:

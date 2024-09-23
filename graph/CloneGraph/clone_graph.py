@@ -1,8 +1,6 @@
 '''
 https://leetcode.com/problems/clone-graph/
-'''
-'''
-https://leetcode.com/problems/clone-graph/
+
 '''
 import collections
 
@@ -40,3 +38,28 @@ def clone_graph(G):
     # Return the clone of the starting vertex
     return dictionary[G]
 
+# class GraphVertex:
+#     def __init__(self, label):
+#         self.label = label
+#         self.edges = []
+
+# def clone_graph_dfs(node):
+#     if not node:
+#         return None
+    
+#     cloned_map = {}
+    
+#     def dfs(curr_node):
+#         if curr_node in cloned_map:
+#             return
+        
+#         # Clone the current node
+#         cloned_map[curr_node] = GraphVertex(curr_node.label)
+        
+#         # Iterate through the neighbors
+#         for nei in curr_node.edges:
+#             dfs(nei)
+#             cloned_map[curr_node].edges.append(cloned_map[nei])
+    
+#     dfs(node)
+#     return cloned_map[node]

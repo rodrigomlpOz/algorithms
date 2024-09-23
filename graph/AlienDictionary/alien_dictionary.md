@@ -7,12 +7,11 @@ The task involves constructing a directed graph of character dependencies from t
 ### Function Definition
 
 ```python
-class Solution(object):
-    def alienOrder(self, words):
-        """
-        :type words: List[str]
-        :rtype: str
-        """
+def alienOrder(self, words):
+   """
+   :type words: List[str]
+   :rtype: str
+   """
 ```
 
 ### High-Level Steps
@@ -35,8 +34,7 @@ class Solution(object):
 
 ```python
 words = ["wrt", "wrf", "er", "ett", "rftt"]
-sol = Solution()
-result = sol.alienOrder(words)
+result = alienOrder(words)
 print(result)  # Possible output: "wertf"
 ```
 

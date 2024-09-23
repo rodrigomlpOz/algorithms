@@ -28,18 +28,6 @@ The problem reduces to detecting **cycles** in the graph. If a cycle exists, itâ
 ### Function Definition:
 
 ```python
-def has_cycle(graph, node, visiting, visited):
-    """
-    Helper function to perform DFS and detect cycles.
-    
-    :param graph: Adjacency list representing the graph.
-    :param node: Current node being visited.
-    :param visiting: Set to track nodes currently being visited.
-    :param visited: Set to track fully processed nodes.
-    :return: False if a cycle is detected, True otherwise.
-    """
-    pass  # High-level logic explained above.
-
 def course_schedule(num_courses, courses):
     """
     Determines if all courses can be completed given their prerequisites.
