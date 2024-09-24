@@ -2,28 +2,27 @@ from collections import defaultdict
 from typing import List
 
 def calcEquation(equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
-    # Step 1: Build the graph
-    graph = defaultdict(list)
+    # Build the graph
+    graph = defaultdict(dict)
     for (A, B), value in zip(equations, values):
-        graph[A].append((B, value))
-        graph[B].append((A, 1 / value))
+        graph[A][B] = value
+        graph[B][A] = 1 / value
 
     # DFS helper function
     def dfs(start: str, end: str, visited: set) -> float:
         if start == end:
             return 1.0
-        
-        visited.add(start)  # Mark node as visited
+        visited.add(start)
 
-        for neighbor, value in graph[start]:
-            if neighbor in visited:  # Skip already visited nodes
-                continue
-            result = dfs(neighbor, end, visited)
-            if result != -1.0:
-                return value * result
+        for neighbor, value in graph[start].items():
+            if neighbor not in visited:
+                result = dfs(neighbor, end, visited)
+                if result != -1.0:
+                    return value * result
 
-        return -1.0  # No valid path found
+        return -1.0
 
+    # Evaluate each query
     results = []
     for C, D in queries:
         if C not in graph or D not in graph:
