@@ -12,7 +12,7 @@ def maze_solve(maze, e):
             if find_path(maze, x + dir[0], y + dir[1], e, path, visited):
                 return True
         visited.remove((x,y))
-        del path[-1]
+        path.pop() 
         return False
     path = []
     find_path(maze, len(maze)-1, 0, e, path, set())
