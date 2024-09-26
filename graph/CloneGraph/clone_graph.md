@@ -41,7 +41,7 @@ class GraphVertex:
         self.label = label
         self.edges = []
 
-def clone_graph(GraphVertex):
+def clone_graph(G):
     pass
 ```
 
