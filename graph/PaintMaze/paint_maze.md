@@ -1,8 +1,8 @@
 ### Problem: Paint the Maze (EPI 18.2)
 
-The task is to change the color of a connected region in a 2D matrix (maze) starting from a given point `(x, y)`. The region consists of all cells that are connected either horizontally or vertically and have the same initial color as the cell at `(x, y)`.
+Also known as floodfill. The task is to change the color of a connected region in a 2D matrix (maze) starting from a given point `(x, y)`. The region consists of all cells that are connected either horizontally or vertically and have the same initial color as the cell at `(x, y)`.
 
-<img width="643" alt="image" src="https://github.com/user-attachments/assets/5e402a7c-d185-4492-8bd5-17a04fbe8f64">
+<img width="713" alt="image" src="https://github.com/user-attachments/assets/9753246d-f6f4-4a00-bcb4-e48ffbb9c266">
 
 
 ### High-Level Solution:
