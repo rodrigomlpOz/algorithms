@@ -1,5 +1,8 @@
 ### Problem: Maze Solver (EPI 18.1)
 
+<img width="642" alt="image" src="https://github.com/user-attachments/assets/d79e1792-f332-402e-8f47-77bc92f3406f">
+
+
 We need to find a path through a maze starting from the bottom-left corner of the maze and ending at a specified point `(e)`. The maze is represented by a 2D grid where:
 - `0` represents a passable path.
 - `1` represents an obstacle.
