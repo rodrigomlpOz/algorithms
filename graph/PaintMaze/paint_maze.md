@@ -2,6 +2,9 @@
 
 The task is to change the color of a connected region in a 2D matrix (maze) starting from a given point `(x, y)`. The region consists of all cells that are connected either horizontally or vertically and have the same initial color as the cell at `(x, y)`.
 
+<img width="643" alt="image" src="https://github.com/user-attachments/assets/5e402a7c-d185-4492-8bd5-17a04fbe8f64">
+
+
 ### High-Level Solution:
 
 1. **Identify the Region**:
