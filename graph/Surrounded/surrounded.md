@@ -2,6 +2,13 @@
 
 The task is to modify a 2D board of `'X'` and `'O'` such that all `'O'` regions completely surrounded by `'X'` are flipped to `'X'`. Any `'O'` connected to the board's boundary should not be flipped.
 
+<img width="643" alt="image" src="https://github.com/user-attachments/assets/5be83121-178f-4a93-88c3-5913e10b9ea3">
+
+<img width="622" alt="image" src="https://github.com/user-attachments/assets/9d64b1bf-95e2-416b-810f-267d0e9167c6">
+
+<img width="580" alt="image" src="https://github.com/user-attachments/assets/be497838-3b4d-427b-941d-dbf2bf1b2cd3">
+
+
 ### High-Level Solution:
 
 1. **Identify Boundary-Connected Regions**:
