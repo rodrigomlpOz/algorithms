@@ -38,19 +38,24 @@ class LRUCache:
         return -1
 
     def put(self, key: int, value: int):
+        # If the key is already in the cache, update the node and move it to the front
         if key in self.cache:
             node = self.cache[key]
-            self._remove(node)  # Remove the old node
-        elif len(self.cache) >= self.capacity:
-            # Remove the least recently used node (from the tail)
-            lru_node = self.tail.prev
-            self._remove(lru_node)
-            del self.cache[lru_node.key]
-        
-        # Insert the new node at the front of the list
-        new_node = Node(key, value)
-        self.cache[key] = new_node
-        self._add(new_node)
+            node.value = value
+            self._remove(node)
+            self._add(node)
+        else:
+            # If the cache is full, evict the least recently used node
+            if len(self.cache) >= self.capacity:
+                lru_node = self.tail.prev
+                self._remove(lru_node)
+                del self.cache[lru_node.key]
+    
+            # Insert the new node at the front of the list
+            new_node = Node(key, value)
+            self.cache[key] = new_node
+            self._add(new_node)
+
 
 # Example usage:
 lru_cache = LRUCache(2)
