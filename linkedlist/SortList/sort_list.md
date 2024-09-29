@@ -10,7 +10,7 @@ Given the head of a singly linked list, sort the list in ascending order and ret
 #         self.next = None
 
 
-def sortList(self, head: ListNode) -> ListNode:
+def sortList(head):
     pass
 ```
 
