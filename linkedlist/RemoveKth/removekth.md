@@ -13,7 +13,64 @@ Given a singly linked list `L` and an integer `k`, implement a function `remove_
 
 ### Function Signature
 ```python
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
 def remove_kth_last(L: ListNode, k: int) -> Optional[ListNode]:
+    """
+    Removes the k-th last node from the list and returns the modified list.
+    """
+    pass
+
+# Helper function to create a linked list from a list of values
+def create_linked_list(lst):
+    dummy = ListNode(0)
+    current = dummy
+    for val in lst:
+        current.next = ListNode(val)
+        current = current.next
+    return dummy.next
+
+# Helper function to print the linked list
+def print_linked_list(head: ListNode):
+    result = []
+    while head:
+        result.append(str(head.val))
+        head = head.next
+    print(" -> ".join(result))
+
+# Test case 1
+lst = [1, 2, 3, 4, 5]
+k = 2
+L = create_linked_list(lst)
+print("Original List:")
+print_linked_list(L)
+print(f"After removing {k}-th last node:")
+L = remove_kth_last(L, k)
+print_linked_list(L)
+
+# Test case 2
+lst = [10, 20, 30, 40, 50]
+k = 1
+L = create_linked_list(lst)
+print("\nOriginal List:")
+print_linked_list(L)
+print(f"After removing {k}-th last node:")
+L = remove_kth_last(L, k)
+print_linked_list(L)
+
+# Test case 3
+lst = [1, 2]
+k = 2
+L = create_linked_list(lst)
+print("\nOriginal List:")
+print_linked_list(L)
+print(f"After removing {k}-th last node:")
+L = remove_kth_last(L, k)
+print_linked_list(L)
+
 ```
 
 ### Example
