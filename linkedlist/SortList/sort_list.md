@@ -9,9 +9,9 @@ Given the head of a singly linked list, sort the list in ascending order and ret
 #         self.val = x
 #         self.next = None
 
-class Solution:
-    def sortList(self, head: ListNode) -> ListNode:
-        pass
+
+def sortList(self, head: ListNode) -> ListNode:
+    pass
 ```
 
 ### Example Calls:
@@ -24,7 +24,7 @@ head = ListNode(4)
 head.next = ListNode(2)
 head.next.next = ListNode(1)
 head.next.next.next = ListNode(3)
-result = Solution().sortList(head)
+result = sortList(head)
 
 # Example 2:
 # Input: -1 -> 5 -> 3 -> 4 -> 0
@@ -35,7 +35,7 @@ head.next = ListNode(5)
 head.next.next = ListNode(3)
 head.next.next.next = ListNode(4)
 head.next.next.next.next = ListNode(0)
-result = Solution().sortList(head)
+result = sortList(head)
 ```
 
 ### High-Level Solution:
