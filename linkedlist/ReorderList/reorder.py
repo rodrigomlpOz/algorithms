@@ -24,6 +24,7 @@ def reorderList(head: ListNode) -> None:
         curr.next = prev
         prev = curr
         curr = next_temp
+    #prev will be at the head of the reversed list
     
     # Step 3: Merge the two halves
     first, second = head, prev
