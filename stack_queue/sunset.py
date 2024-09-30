@@ -1,10 +1,12 @@
-def examine_buildings_with_sunset(sequence: Iterator[int]) -> List[int]:
-
-    BuildingWithHeight = collections.namedtuple('BuildingWithHeight',
-                                                ('id', 'height'))
-    candidates: List[BuildingWithHeight] = []
+def examine_buildings_with_sunset(sequence):
+    candidates = []  # Store tuples of (id, height)
+    
     for building_idx, building_height in enumerate(sequence):
-        while candidates and building_height >= candidates[-1].height:
+        # Remove candidates that are shorter or equal to the current building
+        while candidates and building_height >= candidates[-1][1]:  # Compare height (2nd element)
             candidates.pop()
-        candidates.append(BuildingWithHeight(building_idx, building_height))
-    return [c.id for c in reversed(candidates)]
+        # Append the new building as a tuple (index, height)
+        candidates.append((building_idx, building_height))
+    
+    # Return the indices of the buildings in reverse order (as seen from the sunset)
+    return [c[0] for c in reversed(candidates)]  # Extract the index (1st element)
