@@ -4,6 +4,7 @@ The **Longest Substring Without Repeating Characters** problem asks you to find 
 - **Input**: `"abcabcbb"`
 - **Output**: `3` (The answer is "abc", with the length of 3.)
 
+
 ### Approach: Sliding Window Technique
 This problem can be efficiently solved using the **sliding window** technique combined with a **hash set** to track the unique characters in the current window.
 
@@ -11,6 +12,14 @@ This problem can be efficiently solved using the **sliding window** technique co
 2. **Expand the window**: Move the `right` pointer to the right, adding characters to a hash set as long as there are no duplicates.
 3. **Shrink the window**: When a duplicate is encountered, move the `left` pointer to remove characters until the duplicate is eliminated.
 4. **Track the maximum length**: Keep updating the length of the longest substring encountered.
+
+### Why while loop?
+
+Example:
+Consider the string "abba" and the sliding window approach:
+
+When the right pointer reaches the second 'b', an if statement would remove only the first character, but the substring would still have repeating 'b's.
+The while loop ensures that both characters ('a' and 'b') are removed until the substring becomes valid again (i.e., the second 'b' can now be added).
 
 ### Python Code Example:
 
