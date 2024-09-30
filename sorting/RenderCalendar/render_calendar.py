@@ -9,6 +9,8 @@ def find_max_simultaneous_events(events):
 
     # Step 2: Sort the list of endpoints
     # First by time, then prioritize start events over end events if times are the same
+    #Since True > False in Python, if we sort directly by x[1], the end events (False) will come before start events (True), 
+    #which is the opposite of what we want. We want start events to come first, so using not x[1] flips the priority to sort start events (True) before end events (False).
     endpoints.sort(key=lambda x: (x[0], not x[1]))
 
     # Step 3: Traverse the sorted endpoints to find the maximum number of overlapping events
