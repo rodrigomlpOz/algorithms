@@ -1,44 +1,25 @@
-from collections import namedtuple
-from typing import List
-
-# Define the Event as a named tuple with 'start' and 'finish' attributes
-Event = namedtuple('Event', ('start', 'finish'))
-
-def find_max_simultaneous_events(events: List[Event]) -> int:
-    # Define Endpoint as a named tuple with 'time' and 'is_start' attributes
-    Endpoint = namedtuple('Endpoint', ('time', 'is_start'))
-
-    # Create a list of all start and end points
+def find_max_simultaneous_events(events):
+    # Step 1: Create a list of all event endpoints (start and finish times)
     endpoints = []
-    for event in events:
-        endpoints.append(Endpoint(event.start, True))   # True indicates the start of an event
-        endpoints.append(Endpoint(event.finish, False)) # False indicates the end of an event
+    
+    for start, finish in events:
+        # (time, is_start) -> is_start = True for starting event, False for ending event
+        endpoints.append((start, True))  # True indicates a start time
+        endpoints.append((finish, False))  # False indicates an end time
 
-    # Sort the endpoints by time. If two times are the same, prioritize start events
-    endpoints.sort(key=lambda e: (e.time, not e.is_start))
+    # Step 2: Sort the list of endpoints
+    # First by time, then prioritize start events over end events if times are the same
+    endpoints.sort(key=lambda x: (x[0], not x[1]))
 
-    max_simultaneous_events = 0
-    current_simultaneous_events = 0
-
-    # Traverse the sorted endpoints to determine the maximum number of simultaneous events
-    for endpoint in endpoints:
-        if endpoint.is_start:
-            # Increment the count when an event starts
-            current_simultaneous_events += 1
-            # Update the maximum count if needed
-            max_simultaneous_events = max(max_simultaneous_events, current_simultaneous_events)
+    # Step 3: Traverse the sorted endpoints to find the maximum number of overlapping events
+    max_simultaneous = 0
+    current_simultaneous = 0
+    
+    for time, is_start in endpoints:
+        if is_start:
+            current_simultaneous += 1
+            max_simultaneous = max(max_simultaneous, current_simultaneous)
         else:
-            # Decrement the count when an event ends
-            current_simultaneous_events -= 1
-
-    return max_simultaneous_events
-
-# Example usage
-events = [
-    Event(1, 5),
-    Event(2, 7),
-    Event(4, 5),
-    Event(6, 10),
-    Event(8, 9)
-]
-print(find_max_simultaneous_events(events))  # Output: 3
+            current_simultaneous -= 1
+    
+    return max_simultaneous
