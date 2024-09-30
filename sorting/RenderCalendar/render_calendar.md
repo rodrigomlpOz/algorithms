@@ -1,51 +1,75 @@
 ### Problem Statement:
-You are given a list of events, where each event is defined by a start time and a finish time. Your task is to determine the maximum number of events that are occurring simultaneously.
+You are given a list of events, where each event is defined by a start time and a finish time. Your task is to determine the maximum number of events that occur simultaneously at any given time.
 
 ### Functional Definition:
-1. **Function Name:** `find_max_simultaneous_events`
-2. **Input Parameters:**
-   - `events` (List of `Event` namedtuples): A list of events, where each event is represented by a named tuple `Event(start, finish)`.
-   - Each event has:
-     - `start`: The start time of the event (an integer).
-     - `finish`: The finish time of the event (an integer).
 
-3. **Output:**
-   - An integer representing the maximum number of events that overlap (i.e., the maximum number of events that are occurring at the same time).
+**Function Name**: `find_max_simultaneous_events`
 
-4. **Example Call:**
-   ```python
-   events = [
-       Event(1, 5),
-       Event(2, 7),
-       Event(4, 5),
-       Event(6, 10),
-       Event(8, 9)
-   ]
-   result = find_max_simultaneous_events(events)
-   # Output: 3
-   ```
+**Input Parameters**:
+- `events` (List of tuples): A list of events, where each event is represented by a tuple `(start, finish)`:
+  - `start` (int): The start time of the event.
+  - `finish` (int): The finish time of the event.
+
+**Output**:
+- An integer representing the maximum number of events that overlap (i.e., the maximum number of events occurring simultaneously at the same time).
+
+### Example Call:
+
+```python
+events = [
+    (1, 5),
+    (2, 7),
+    (4, 5),
+    (6, 10),
+    (8, 9)
+]
+
+result = find_max_simultaneous_events(events)
+print(result)  # Output: 3
+```
 
 ### High-Level Solution:
-1. **Event Representation:**
-   - Use a named tuple `Event` to represent each event with `start` and `finish` times.
-   - Additionally, represent each event's start and finish as "endpoints" using another named tuple `Endpoint`.
 
-2. **Endpoints Construction:**
-   - For each event, create two endpoints: one for the start time (`is_start=True`) and one for the finish time (`is_start=False`).
-   - Store all endpoints in a list.
+1. **Event Representation**:
+   - Each event is represented as a tuple `(start, finish)` where `start` is the time the event begins and `finish` is the time the event ends.
+   
+2. **Endpoints Construction**:
+   - For each event, we create two points (or "endpoints"): one for the start time and one for the finish time. These will help us track when events begin and end.
 
-3. **Sorting the Endpoints:**
-   - Sort the list of endpoints primarily by time. If two events have the same time, prioritize the start event over the finish event (to ensure overlapping events are counted correctly).
+3. **Sorting the Endpoints**:
+   - We create a list of endpoints consisting of the start and finish times of all events. Each endpoint is a tuple `(time, is_start)` where:
+     - `time` is the event time (either start or finish).
+     - `is_start` is a boolean indicating whether the event is starting (`True`) or ending (`False`).
+   - We sort these endpoints by time, giving priority to start times when two events share the same time (so we correctly count overlapping events).
 
-4. **Simultaneous Events Calculation:**
-   - Traverse the sorted list of endpoints, maintaining a counter for the number of simultaneous events.
-   - Increment the counter when an event starts and decrement it when an event ends.
-   - Track the maximum number of simultaneous events encountered during the traversal.
+4. **Counting Simultaneous Events**:
+   - We traverse the sorted list of endpoints, maintaining a counter for the number of events that are active at each point in time.
+   - We increment the counter when an event starts and decrement it when an event ends.
+   - Track the maximum number of simultaneous events encountered during this traversal.
 
-5. **Return Result:**
-   - The maximum value of simultaneous events encountered during the traversal is the solution.
+5. **Return Result**:
+   - The maximum value of simultaneous events encountered during the traversal is the solution, representing the maximum number of overlapping events.
 
-### Explanation:
-- **Event Construction:** Each event is represented by its start and finish times. By constructing a list of these endpoints, we can effectively track when events are overlapping.
-- **Sorting and Traversal:** Sorting ensures that we process events in chronological order, and by handling start events before end events at the same time, we accurately count overlapping events.
-- **Final Output:** The function returns the maximum number of events that overlap at any given time, which is the desired result.
+### Code Implementation:
+
+```python
+def find_max_simultaneous_events(events):
+   pass
+```
+
+### Example Walkthrough:
+For the input:
+```python
+events = [
+    (1, 5),
+    (2, 7),
+    (4, 5),
+    (6, 10),
+    (8, 9)
+]
+```
+
+- Events start and end at: `{(1, 5), (2, 7), (4, 5), (6, 10), (8, 9)}`
+- At time 4, three events overlap: `{(1, 5), (2, 7), (4, 5)}`.
+
+Thus, the function returns `3` as the maximum number of overlapping events.
