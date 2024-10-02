@@ -26,19 +26,17 @@ You only need one meeting room since the meetings do not overlap.
 ### Function Definition:
 
 ```python
-class Solution:
-    def minMeetingRooms(self, intervals):
-        """
-        Function to determine the minimum number of meeting rooms required.
-        
-        Args:
-        intervals: List[List[int]] - A list of meeting time intervals.
-        
-        Returns:
-        int - The minimum number of meeting rooms required.
-        """
-        pass  # Implementation will go here
-```
+def minMeetingRooms(self, intervals):
+    """
+    Function to determine the minimum number of meeting rooms required.
+    
+    Args:
+    intervals: List[List[int]] - A list of meeting time intervals.
+    
+    Returns:
+    int - The minimum number of meeting rooms required.
+    """
+    pass  # Implementation will go here
 
 ### Function Calls:
 
