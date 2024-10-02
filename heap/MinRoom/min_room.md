@@ -43,8 +43,7 @@ def minMeetingRooms(self, intervals):
 ```python
 # Test Case 1
 intervals = [[0, 30], [5, 10], [15, 20]]
-solution = Solution()
-print(solution.minMeetingRooms(intervals))  # Expected output: 2
+print(minMeetingRooms(intervals))  # Expected output: 2
 
 # Test Case 2
 intervals = [[7, 10], [2, 4]]
