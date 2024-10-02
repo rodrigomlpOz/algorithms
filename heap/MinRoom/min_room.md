@@ -46,7 +46,7 @@ print(minMeetingRooms(intervals))  # Expected output: 2
 
 # Test Case 2
 intervals = [[7, 10], [2, 4]]
-print(solution.minMeetingRooms(intervals))  # Expected output: 1
+print(minMeetingRooms(intervals))  # Expected output: 1
 ```
 
 ---
