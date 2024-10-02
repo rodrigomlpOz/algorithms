@@ -40,7 +40,6 @@ def minMeetingRooms(self, intervals):
 
 ### Function Calls:
 
-```python
 # Test Case 1
 intervals = [[0, 30], [5, 10], [15, 20]]
 print(minMeetingRooms(intervals))  # Expected output: 2
