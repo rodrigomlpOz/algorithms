@@ -1,6 +1,5 @@
 import heapq
 def merge_sorted_arrays(sorted_arrays):
-
     min_heap = []
     # Builds a list of iterators for each array in sorted_arrays.
     sorted_arrays_iters = [iter(x) for x in sorted_arrays]
