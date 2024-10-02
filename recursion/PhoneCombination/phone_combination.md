@@ -14,9 +14,8 @@ Given a string containing digits from 2 to 9 inclusive, return all possible lett
 ## Function Signature
 
 ```python
-class Solution:
-    def letterCombinations(self, digits):
-        pass
+def letterCombinations(self, digits):
+    pass
 ```
 
 ### Input Parameters
