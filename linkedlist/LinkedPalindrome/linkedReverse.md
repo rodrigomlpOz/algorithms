@@ -59,51 +59,8 @@ class ListNode:
         self.val = val
         self.next = next
 
-# Helper function to reverse a linked list
-def reverse_list(head: ListNode) -> ListNode:
-    prev = None
-    current = head
-    while current:
-        next_node = current.next
-        current.next = prev
-        prev = current
-        current = next_node
-    return prev
-
-# Helper function to find the end of the first half
-def end_of_first_half(head: ListNode) -> ListNode:
-    slow = head
-    fast = head
-    while fast.next is not None and fast.next.next is not None:
-        slow = slow.next
-        fast = fast.next.next
-    return slow
-
-# Main function to check if the list is a palindrome
 def isPalindrome(head: ListNode) -> bool:
-    if not head or not head.next:
-        return True  # Empty list or single element is a palindrome
-
-    # Step 1: Find the end of the first half
-    first_half_end = end_of_first_half(head)
-    
-    # Step 2: Reverse the second half of the list
-    second_half_start = reverse_list(first_half_end.next)
-
-    # Step 3: Compare the first half and the reversed second half
-    first_position = head
-    second_position = second_half_start
-    palindrome = True
-    while palindrome and second_position:
-        if first_position.val != second_position.val:
-            palindrome = False
-        first_position = first_position.next
-        second_position = second_position.next
-
-    # Step 4: Restore the list
-    first_half_end.next = reverse_list(second_half_start)
-
-    return palindrome
+   pass
 ```
 
 ### Example Test Cases
