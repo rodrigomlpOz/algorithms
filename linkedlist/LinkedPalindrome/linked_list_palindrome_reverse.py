@@ -1,48 +1,38 @@
-'''
-413 + 907 = 1320
-'''
 class ListNode:
-    def __init__(self, val=0):
+    def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
-def end_of_first_half(head):
-    fast = head
-    slow = head
-    while fast.next is not None and fast.next.next is not None:
-        fast = fast.next.next
-        slow = slow.next
-    return slow
+# Helper function to reverse a linked list
+def reverse_list(head: ListNode) -> ListNode:
+    prev = None
+    while head:
+        next_node = head.next
+        head.next = prev
+        prev = head
+        head = next_node
+    return prev
 
-def reverse_list(self, head):
-    previous = None
-    current = head
-    while current is not None:
-        next_node = current.next
-        current.next = previous
-        previous = current
-        current = next_node
-        return previous
-    
+# Main function to check if the list is a palindrome
 def isPalindrome(head: ListNode) -> bool:
-    if head is None:
+    if not head or not head.next:
         return True
 
-    # Find the end of first half and reverse second half.
-    first_half_end = end_of_first_half(head)
-    second_half_start = reverse_list(first_half_end.next)
+    # Step 1: Find the middle of the list
+    slow, fast = head, head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
 
-    # Check whether or not there's a palindrome.
-    result = True
-    first_position = head
-    second_position = second_half_start
-    while result and second_position is not None:
-        if first_position.val != second_position.val:
-            result = False
-        first_position = first_position.next
-        second_position = second_position.next
+    # Step 2: Reverse the second half
+    second_half = reverse_list(slow)
 
-    # Restore the list and return the result.
-    first_half_end.next = reverse_list(second_half_start)
-    return result    
+    # Step 3: Compare the first half with the reversed second half
+    first_half = head
+    while second_half:
+        if first_half.val != second_half.val:
+            return False
+        first_half = first_half.next
+        second_half = second_half.next
 
+    return True
