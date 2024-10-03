@@ -9,10 +9,9 @@ Below are the function signatures for `findArrayQuadruplet` in Python, C++, and 
 
 #### Python
 ```python
-from typing import List
-
-def findArrayQuadruplet(arr: List[int], s: int) -> List[int]:
+def findArrayQuadruplet(arr, s):
     # Function implementation
+    pass
 ```
 
 These signatures provide a starting point for implementing the `findArrayQuadruplet` function in each respective language. The function is expected to take a list (or vector) of integers `arr` and an integer `s`, and return a list (or vector) of integers representing the quadruplet that sums up to `s` in ascending order, or an empty list (or vector) if no such quadruplet exists.
