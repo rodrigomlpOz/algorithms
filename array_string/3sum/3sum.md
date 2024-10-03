@@ -3,9 +3,7 @@ The **3Sum** problem is a classic algorithmic challenge commonly asked in coding
 ### Problem Statement:
 Given an array of integers `nums`, find all unique triplets `(a, b, c)` in the array such that:
 ```
-from typing import List
-
-def threeSum(nums: List[int]) -> List[List[int]]:
+def threeSum(nums):
     # Implementation here
 
 
