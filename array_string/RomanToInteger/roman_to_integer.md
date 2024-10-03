@@ -46,23 +46,24 @@ def romanToInt(self, s: str) -> int:
 
 #### Example 1:
 ```python
-Input: s = "III"
-Explanation: III = 1 + 1 + 1 = 3.
-Output: 3
-```
+print("Test 1: Input: 'III'")
+print("Explanation: III = 1 + 1 + 1 = 3")
+result = roman_to_integer("III")
+print(f"Output: {result}")
+print("----------------------")
 
-#### Example 2:
-```python
-Input: s = "LVIII"
-Explanation: L = 50, V = 5, III = 3.
-Output: 58
-```
+print("Test 2: Input: 'LVIII'")
+print("Explanation: L = 50, V = 5, III = 3")
+result = roman_to_integer("LVIII")
+print(f"Output: {result}")
+print("----------------------")
 
-#### Example 3:
-```python
-Input: s = "MCMXCIV"
-Explanation: M = 1000, CM = 900, XC = 90, IV = 4.
-Output: 1994
+print("Test 3: Input: 'MCMXCIV'")
+print("Explanation: M = 1000, CM = 900, XC = 90, IV = 4")
+result = roman_to_integer("MCMXCIV")
+print(f"Output: {result}")
+print("----------------------")
+
 ```
 
 ### Time and Space Complexity:
