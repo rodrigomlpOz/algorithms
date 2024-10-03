@@ -12,7 +12,7 @@ Implement a function `isPalindrome` that checks if the linked list is a palindro
 
 ### Function Signature
 ```python
-def isPalindrome(self, head: ListNode) -> bool:
+def isPalindrome(head: ListNode) -> bool:
 ```
 
 ### Helper Functions
