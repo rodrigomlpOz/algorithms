@@ -11,19 +11,8 @@ Write a function `fourSumCount` that takes these four lists as input and returns
 **Python:**
 
 ```python
-def fourSumCount(A: List[int], B: List[int], C: List[int], D: List[int]) -> int:
-```
-
-**C++:**
-
-```cpp
-int fourSumCount(vector<int>& A, vector<int>& B, vector<int>& C, vector<int>& D);
-```
-
-**C#:**
-
-```csharp
-public int FourSumCount(int[] A, int[] B, int[] C, int[] D);
+def fourSumCount(A, B, C, D) -> int:
+pass
 ```
 
 #### Input
