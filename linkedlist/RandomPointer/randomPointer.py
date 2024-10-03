@@ -2,6 +2,7 @@ class Node:
     def __init__(self, val):
         self.val = val
         self.next = None
+        self.random = None  # Add random pointer to the Node class
 
 def copyRandomList(head):
     if not head:
@@ -12,8 +13,6 @@ def copyRandomList(head):
     prev_copy = None
 
     # **First pass:** Create copies and assign 'next' pointers
-    # at the time you encounter a node, the random pointer of 
-    # that node could point to another node further in the list, whose copy has not yet been created.
     while current:
         copy = Node(current.val)
         old_to_new[current] = copy
@@ -28,7 +27,8 @@ def copyRandomList(head):
     current = head
     while current:
         copy = old_to_new[current]
-        copy.random = old_to_new.get(current.random)
+        if current.random:  # Explicit check for random pointer
+            copy.random = old_to_new[current.random]  # Assign the copied random node
         current = current.next
 
     return old_to_new[head]
