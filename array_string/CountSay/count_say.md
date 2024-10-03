@@ -37,19 +37,19 @@ print(countAndSay(10)) # Output: "13211311123113112211"
 # Example 1: Generate the 5th term
 n = 5
 print(f"Calling count_and_say({n})")
-result = count_and_say(n)
+result = countAndSay(n)
 print(f"Result of count_and_say({n}): {result}\n")
 
 # Example 2: Generate the 1st term
 n = 1
 print(f"Calling count_and_say({n})")
-result = count_and_say(n)
+result = countAndSay(n)
 print(f"Result of count_and_say({n}): {result}\n")
 
 # Example 3: Generate the 6th term
 n = 6
 print(f"Calling count_and_say({n})")
-result = count_and_say(n)
+result = countAndSay(n)
 print(f"Result of count_and_say({n}): {result}\n")
 ```
 
