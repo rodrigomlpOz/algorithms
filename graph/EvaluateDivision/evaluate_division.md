@@ -34,9 +34,7 @@ You are given:
 Here's the function signature you'll implement to solve the problem:
 
 ```python
-from typing import List
-
-def calcEquation(equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+def calcEquation(equations, values, queries):
     """
     Calculates the result of division for each query based on the given equations and values.
 
