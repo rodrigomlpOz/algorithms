@@ -22,7 +22,7 @@ Certain numerals are formed by placing smaller values before larger ones to indi
 
 ### Function Definition:
 ```python
-def romanToInt(self, s: str) -> int:
+def roman_to_integer(s: str) -> int:
     # Function to convert Roman numeral string to an integer
 ```
 
