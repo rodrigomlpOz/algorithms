@@ -24,6 +24,17 @@ Certain numerals are formed by placing smaller values before larger ones to indi
 ```python
 def roman_to_integer(s: str) -> int:
     # Function to convert Roman numeral string to an integer
+    roman_map = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+pass
+
 ```
 
 ### Approach:
