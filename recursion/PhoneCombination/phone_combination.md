@@ -37,15 +37,20 @@ def letterCombinations(digits):
 
 ### Example Inputs and Outputs
 
-**Example 1:**
+# Assuming letterCombinations function is defined and returns the letter combinations
 
-- **Input:** `digits = "23"`
-- **Output:** `["ad","ae","af","bd","be","bf","cd","ce","cf"]`
+# Test Case 1: Input = "23"
+print("Test Case 1: Input = '23'")
+print("Output:", letterCombinations("23"))  # Expected Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
 
-**Example 2:**
+# Test Case 2: Input = ""
+print("\nTest Case 2: Input = ''")
+print("Output:", letterCombinations(""))  # Expected Output: []
 
-- **Input:** `digits = ""`
-- **Output:** `[]`
+# Test Case 3: Input = "2"
+print("\nTest Case 3: Input = '2'")
+print("Output:", letterCombinations("2"))  # Expected Output: ["a", "b", "c"]
+
 
 ## High-Level Approach
 
