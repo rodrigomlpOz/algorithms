@@ -31,27 +31,23 @@ def convert(s: str, numRows: int) -> str:
 **Example 1:**
 
 ```python
-Input: s = "PAYPALISHIRING", numRows = 3
-Output: "PAHNAPLSIIGYIR"
-```
+# Test Case 1
+s1 = "PAYPALISHIRING"
+numRows1 = 3
+print(f"Test Case 1: convert('{s1}', {numRows1})")
+print(convert(s1, numRows1))  # Expected Output: "PAHNAPLSIIGYIR"
 
-**Example 2:**
+# Test Case 2
+s2 = "PAYPALISHIRING"
+numRows2 = 4
+print(f"Test Case 2: convert('{s2}', {numRows2})")
+print(convert(s2, numRows2))  # Expected Output: "PINALSIGYAHRPI"
 
-```python
-Input: s = "PAYPALISHIRING", numRows = 4
-Output: "PINALSIGYAHRPI"
-Explanation:
-P     I    N
-A   L S  I G
-Y A   H R
-P     I
-```
-
-**Example 3:**
-
-```python
-Input: s = "A", numRows = 1
-Output: "A"
+# Test Case 3
+s3 = "A"
+numRows3 = 1
+print(f"Test Case 3: convert('{s3}', {numRows3})")
+print(convert(s3, numRows3))  # Expected Output: "A"
 ```
 
 ---
