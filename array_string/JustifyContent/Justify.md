@@ -79,9 +79,7 @@ Any extra spaces required to fill the line to the required width (maxWidth) shou
 We'll define a function `fullJustify` that takes in a list of strings `words` and an integer `maxWidth`, and returns a list of strings representing the fully justified text.
 
 ```python
-from typing import List
-
-def fullJustify(words: List[str], maxWidth: int) -> List[str]:
+def fullJustify(words, maxWidth):
     pass  # Implementation goes here
 ```
 
