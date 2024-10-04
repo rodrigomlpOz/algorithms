@@ -20,15 +20,19 @@ def combination_sum(arr, target):
 
 ### Example Inputs and Outputs
 
-**Example 1:**
+```python
+# Assuming the combinationSum function is defined
 
-- **Input:** `candidates = [2, 3, 6, 7]`, `target = 7`
-- **Output:** `[[2, 2, 3], [7]]`
+# Test Case 1: candidates = [2, 3, 6, 7], target = 7
+print("Test Case 1: Input = [2, 3, 6, 7], target = 7")
+print("Output:", combinationSum([2, 3, 6, 7], 7))  
+# Expected Output: [[2, 2, 3], [7]]
 
-**Example 2:**
-
-- **Input:** `candidates = [2, 3, 5]`, `target = 8`
-- **Output:** `[[2, 2, 2, 2], [2, 3, 3], [3, 5]]`
+# Test Case 2: candidates = [2, 3, 5], target = 8
+print("\nTest Case 2: Input = [2, 3, 5], target = 8")
+print("Output:", combinationSum([2, 3, 5], 8))  
+# Expected Output: [[2, 2, 2, 2], [2, 3, 3], [3, 5]]
+```
 
 ## High-Level Approach
 
