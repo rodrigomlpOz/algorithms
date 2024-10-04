@@ -4,13 +4,13 @@ def int_to_roman(num):
         100, 90, 50, 40, 
         10, 9, 5, 4, 
         1
-        ]
+    ]
     syb = [
         "M", "CM", "D", "CD", 
         "C", "XC", "L", "XL", 
         "X", "IX", "V", "IV", 
         "I"
-        ]
+    ]
     roman_num = ''
     for i in range(len(val)):
         while num >= val[i]:
@@ -19,4 +19,6 @@ def int_to_roman(num):
     return roman_num
 
 # Example usage:
-print(int_to_roman(3))  # Output: MCMXCIV
+print(int_to_roman(3))       # Output: "III"
+print(int_to_roman(58))      # Output: "LVIII"
+print(int_to_roman(1994))    # Output: "MCMXCIV"
