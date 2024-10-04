@@ -25,32 +25,32 @@ Given a string `queryIP`, return:
 
  # Example 1: Valid IPv4 Address
  queryIP1 = "172.16.254.1"
- output1 = solution.validIPAddress(queryIP1)
+ output1 = validIPAddress(queryIP1)
  print(f'validIPAddress("{queryIP1}") -> "{output1}"')  # Expected Output: "IPv4"
 
  # Example 2: Valid IPv6 Address
  queryIP2 = "2001:0db8:85a3:0000:0000:8a2e:0370:7334"
- output2 = solution.validIPAddress(queryIP2)
+ output2 = validIPAddress(queryIP2)
  print(f'validIPAddress("{queryIP2}") -> "{output2}"')  # Expected Output: "IPv6"
 
  # Example 3: Invalid IP Address (Neither IPv4 nor IPv6)
  queryIP3 = "256.256.256.256"
- output3 = solution.validIPAddress(queryIP3)
+ output3 = validIPAddress(queryIP3)
  print(f'validIPAddress("{queryIP3}") -> "{output3}"')  # Expected Output: "Neither"
 
  # Example 4: Another Valid IPv6 Address
  queryIP4 = "2001:db8:85a3:0:0:8A2E:0370:7334"
- output4 = solution.validIPAddress(queryIP4)
+ output4 = validIPAddress(queryIP4)
  print(f'validIPAddress("{queryIP4}") -> "{output4}"')  # Expected Output: "IPv6"
 
  # Example 5: Invalid IPv6 Address (Compressed Zeroes Incorrectly Used)
  queryIP5 = "2001:0db8:85a3::8a2e:0370:7334"
- output5 = solution.validIPAddress(queryIP5)
+ output5 = validIPAddress(queryIP5)
  print(f'validIPAddress("{queryIP5}") -> "{output5}"')  # Expected Output: "Neither"
 
  # Example 6: Invalid Characters in IPv6 Address
  queryIP6 = "20EE:FGb8:85a3:0:0:8A2E:0370:7334"
- output6 = solution.validIPAddress(queryIP6)
+ output6 = validIPAddress(queryIP6)
  print(f'validIPAddress("{queryIP6}") -> "{output6}"')  # Expected Output: "Neither"
 ```
 
