@@ -5,7 +5,7 @@ Given an array of distinct integers `candidates` and a target integer `target`, 
 ## Function Signature
 
 ```python
-def combination_sum(arr, target):
+def combinationSum(arr, target):
     pass
 ```
 
