@@ -38,7 +38,7 @@ def letterCombinations(digits):
 ### Example Inputs and Outputs
 
 # Assuming letterCombinations function is defined and returns the letter combinations
-
+```python
 # Test Case 1: Input = "23"
 print("Test Case 1: Input = '23'")
 print("Output:", letterCombinations("23"))  # Expected Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
@@ -50,7 +50,7 @@ print("Output:", letterCombinations(""))  # Expected Output: []
 # Test Case 3: Input = "2"
 print("\nTest Case 3: Input = '2'")
 print("Output:", letterCombinations("2"))  # Expected Output: ["a", "b", "c"]
-
+```
 
 ## High-Level Approach
 
