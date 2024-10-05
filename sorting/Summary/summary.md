@@ -32,10 +32,6 @@ Explanation: The ranges are:
 ### Function Definition (Skeleton):
 ```python
 def summaryRanges(nums):
-    # High-level idea:
-    # 1. Track the start of each range.
-    # 2. If numbers are consecutive, continue the range.
-    # 3. If not consecutive, close the range and start a new one.
     pass
 ```
 
