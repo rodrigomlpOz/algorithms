@@ -50,40 +50,6 @@ The problem requires checking if there exists a root-to-leaf path in a binary tr
 This recursive approach ensures that all paths from the root to the leaves are checked.
 ```
 
-### Example Usage
-
-```python
-# Example tree construction
-#        5
-#       / \
-#      4   8
-#     /   / \
-#    11  13  4
-#   /  \      \
-#  7    2      1
-
-root = TreeNode(5)
-root.left = TreeNode(4)
-root.right = TreeNode(8)
-root.left.left = TreeNode(11)
-root.left.left.left = TreeNode(7)
-root.left.left.right = TreeNode(2)
-root.right.left = TreeNode(13)
-root.right.right = TreeNode(4)
-root.right.right.right = TreeNode(1)
-
-# Check if there is a path with the sum 22
-result = has_path_sum(root, 22)
-print(result)  # Output: True
-
-# Check if there is a path with the sum 27
-result = has_path_sum(root, 27)
-print(result)  # Output: True
-
-# Check if there is a path with the sum 26
-result = has_path_sum(root, 26)
-print(result)  # Output: False
-```
 
 ### Explanation
 
