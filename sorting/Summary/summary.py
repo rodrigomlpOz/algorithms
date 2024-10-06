@@ -1,24 +1,29 @@
-def summaryRanges(nums):
-    # Base case: empty array
+def summary_ranges(nums):
     if not nums:
         return []
-    
+
     ranges = []
     start = nums[0]
-    
+    end = nums[0]
+
     for i in range(1, len(nums)):
-        # If the current number is not consecutive
-        if nums[i] != nums[i - 1] + 1:
-            if start == nums[i - 1]:
+        if nums[i] == nums[i-1] + 1:
+            end = nums[i]
+        else:
+            if start == end:
                 ranges.append(str(start))
             else:
-                ranges.append(f"{start}->{nums[i - 1]}")
+                ranges.append(f"{start}->{end}")
             start = nums[i]
-    
-    # Add the final range
-    if start == nums[-1]:
+            end = nums[i]
+
+    if start == end:
         ranges.append(str(start))
     else:
-        ranges.append(f"{start}->{nums[-1]}")
-    
+        ranges.append(f"{start}->{end}")
+
     return ranges
+
+print(summary_ranges([0,1,2,4,5,7]))
+
+
