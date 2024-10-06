@@ -15,6 +15,28 @@ class TreeNode:
 
 def has_path_sum(tree: TreeNode, remaining_weight: int) -> bool:
     pass
+
+root = TreeNode(5)
+root.left = TreeNode(4)
+root.right = TreeNode(8)
+root.left.left = TreeNode(11)
+root.left.left.left = TreeNode(7)
+root.left.left.right = TreeNode(2)
+root.right.left = TreeNode(13)
+root.right.right = TreeNode(4)
+root.right.right.right = TreeNode(1)
+
+# Check if there is a path with the sum 22
+result = has_path_sum(root, 22)
+print(result)  # Output: True
+
+# Check if there is a path with the sum 27
+result = has_path_sum(root, 27)
+print(result)  # Output: True
+
+# Check if there is a path with the sum 26
+result = has_path_sum(root, 26)
+print(result)  # Output: False
 ```
 
 ### Approach
