@@ -15,30 +15,6 @@ class TreeNode:
 
 def has_path_sum(tree: TreeNode, remaining_weight: int) -> bool:
     pass
-```
-
-### Approach
-
-The problem requires checking if there exists a root-to-leaf path in a binary tree where the sum of the node values equals a given number. The function `has_path_sum` can solve this problem using a recursive depth-first search approach:
-
-1. **Base Case:** If the current node (`tree`) is `None`, it means we've reached a non-existent node (beyond a leaf), so we return `False`.
-2. **Leaf Node Check:** If the current node is a leaf (it has no left or right children), check if its value equals the remaining sum (`remaining_weight`). If yes, return `True`; otherwise, return `False`.
-3. **Recursive Case:** If the current node is not a leaf, subtract the current node's value from the remaining weight and recursively check both the left and right subtrees to see if either contains a path that matches the updated sum.
-
-This recursive approach ensures that all paths from the root to the leaves are checked.
-```
-
-### Example Usage
-
-```python
-# Example tree construction
-#        5
-#       / \
-#      4   8
-#     /   / \
-#    11  13  4
-#   /  \      \
-#  7    2      1
 
 root = TreeNode(5)
 root.left = TreeNode(4)
@@ -62,6 +38,18 @@ print(result)  # Output: True
 result = has_path_sum(root, 26)
 print(result)  # Output: False
 ```
+
+### Approach
+
+The problem requires checking if there exists a root-to-leaf path in a binary tree where the sum of the node values equals a given number. The function `has_path_sum` can solve this problem using a recursive depth-first search approach:
+
+1. **Base Case:** If the current node (`tree`) is `None`, it means we've reached a non-existent node (beyond a leaf), so we return `False`.
+2. **Leaf Node Check:** If the current node is a leaf (it has no left or right children), check if its value equals the remaining sum (`remaining_weight`). If yes, return `True`; otherwise, return `False`.
+3. **Recursive Case:** If the current node is not a leaf, subtract the current node's value from the remaining weight and recursively check both the left and right subtrees to see if either contains a path that matches the updated sum.
+
+This recursive approach ensures that all paths from the root to the leaves are checked.
+```
+
 
 ### Explanation
 
