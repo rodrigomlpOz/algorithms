@@ -15,17 +15,19 @@ class TreeNode:
         self.right = None
 
 def invertTree(root):
-    if not root:
-        return None
-    else:
-        #swap left and right subtrees
-        root.left,root.right = root.right,root.left
-
-        #recursively solve the problem
-        invertTree(root.left)
-        invertTree(root.right)
-
+    if not root or (not root.left and not root.right):
         return root
+    
+    # Recursively invert the left and right subtrees
+    inv_left = invertTree(root.right)
+    inv_right = invertTree(root.left)
+    
+    # Swap the inverted left and right subtrees
+    root.left = inv_left
+    root.right = inv_right
+    
+    return root
+
 
 
 root = TreeNode(1)

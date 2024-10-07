@@ -1,5 +1,3 @@
-Yes, a `TrieNode` is created in the provided implementation. Here’s a detailed breakdown of how `TrieNode` instances are created and used in the Trie data structure:
-
 ### TrieNode Creation
 1. **Initialization in TrieNode Class**:
    - When a new `TrieNode` object is created, its constructor (`__init__`) initializes two attributes:

@@ -12,11 +12,8 @@ class TreeLinkNode:
         self.right = None
         self.next = None
 
-import collections
-
-class Solution:
-    def connect(self, root: TreeLinkNode) -> None:
-        # Implementation here
+def connect(root) -> None:
+    # Implementation here
 ```
 
 ### High-Level Approach
@@ -51,8 +48,7 @@ root.right.left = TreeLinkNode(6)
 root.right.right = TreeLinkNode(7)
 
 # Connect nodes
-sol = Solution()
-sol.connect(root)
+connect(root)
 
 # Example checks
 # root.left.next should be root.right (2 -> 3)
