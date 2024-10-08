@@ -1,6 +1,3 @@
-Apologies for the confusion. Let's focus on providing the problem statement, a high-level solution approach, and the function signature without implementing the solution.
-
----
 
 ### Problem Statement
 
