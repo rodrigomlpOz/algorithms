@@ -36,11 +36,12 @@ root.right.right = TreeNode(9)
 root.left.right.left = TreeNode(3)
 root.left.right.right = TreeNode(5)
 
-p = root.left  # Node with value 2
-q = root.right  # Node with value 8
 
-result = lowestCommonAncestor(root, p, q)  # Output: 6 (the root)
-print(result.val)  # Should print 6
+p = root.left.right.left  # Node with value 3
+q = root.left.right.right  # Node with value 5
+
+result = lowestCommonAncestor(root, p, q)  # Output: 4
+print(result.val)  # Should print 4
 ```
 
 ### High-Level Solution:
