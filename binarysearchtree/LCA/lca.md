@@ -9,7 +9,7 @@ Since it's a Binary Search Tree, the properties of BST can be used:
 ### Function Signature:
 
 ```python
-def lowestCommonAncestor(root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+def lowestCommonAncestor(root, p, q):
     pass
 ```
 
