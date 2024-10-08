@@ -16,7 +16,7 @@ def printLeaves(root):
           
         # Print it if it is a leaf node 
         if root.left is None and root.right is None: 
-            print(root.data), 
+            print(root.data)
   
         printLeaves(root.right) 
   
