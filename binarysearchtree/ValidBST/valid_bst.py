@@ -1,25 +1,15 @@
-#Validate BST
-#https://leetcode.com/problems/validate-binary-search-tree/ Sorted Array to Binary Search Tree
-
-
-# Definition for a binary tree node.
 class TreeNode:
-    def __init__(self, val: int = 0, left: 'TreeNode' = None, right: 'TreeNode' = None):
+    def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
-class Solution:
-    def isValidBST(self, root: Optional[TreeNode], lower=float('-inf'), upper=float('inf')) -> bool:
-        if not root:
+def isValidBST(root):
+    def validate(node, low=float('-inf'), high=float('inf')):
+        if not node:
             return True
+        if not (low < node.val < high):
+            return False
+        return validate(node.left, low, node.val) and validate(node.right, node.val, high)
 
-        val = root.val
-        if val <= lower or val >= upper:
-            return False
-
-        if not self.isValidBST(root.right, val, upper):
-            return False
-        if not self.isValidBST(root.left, lower, val):
-            return False
-        return True
+    return validate(root)

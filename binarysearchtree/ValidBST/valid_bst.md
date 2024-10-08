@@ -29,6 +29,14 @@ To test this function, you would typically create a binary tree using instances 
 
 ```python
 # Example usage:
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def isValidBST(root: TreeNode) -> bool:
+    pass
 
 # Creating a simple BST
 #      2
@@ -39,8 +47,7 @@ root = TreeNode(2)
 root.left = TreeNode(1)
 root.right = TreeNode(3)
 
-solution = Solution()
-result = solution.isValidBST(root)
+result = isValidBST(root)
 print(result)  # Output: True
 
 # Creating an invalid BST
@@ -56,6 +63,6 @@ root.right = TreeNode(4)
 root.right.left = TreeNode(3)
 root.right.right = TreeNode(6)
 
-result = solution.isValidBST(root)
+result = isValidBST(root)
 print(result)  # Output: False
 ```

@@ -16,7 +16,7 @@ def find_kth_node_binary_tree(tree,k):
         if left_size + 1 < k:  # k-th node must be in right subtree of tree.
             k -= left_size + 1
             tree = tree.right
-        elif left_size == k - 1:  # k-th is iter itself.
+        elif left_size + 1 == k:  # k-th is iter itself.
             return tree
         else:  # k-th node must be in left subtree of iter.
             tree = tree.left
