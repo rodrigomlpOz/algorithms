@@ -39,8 +39,7 @@ root = TreeNode(2)
 root.left = TreeNode(1)
 root.right = TreeNode(3)
 
-solution = Solution()
-result = solution.isValidBST(root)
+result = isValidBST(root)
 print(result)  # Output: True
 
 # Creating an invalid BST
@@ -56,6 +55,6 @@ root.right = TreeNode(4)
 root.right.left = TreeNode(3)
 root.right.right = TreeNode(6)
 
-result = solution.isValidBST(root)
+result = isValidBST(root)
 print(result)  # Output: False
 ```
