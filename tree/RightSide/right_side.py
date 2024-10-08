@@ -28,3 +28,26 @@ def rightSideView(root):
                 queue.append(node.right)
     
     return result
+
+# Alternative with rightSideOptimized
+# def rightSideViewOptimized(root):
+#     if not root:
+#         return []
+    
+#     result = []
+#     queue = deque([root])
+    
+#     while queue:
+#         level_length = len(queue)
+#         rightmost = None
+#         for _ in range(level_length):
+#             node = queue.popleft()
+#             rightmost = node.value  # This will be updated to the last node's value
+#             if node.left:
+#                 queue.append(node.left)
+#             if node.right:
+#                 queue.append(node.right)
+#         if rightmost is not None:
+#             result.append(rightmost)
+    
+#     return result
