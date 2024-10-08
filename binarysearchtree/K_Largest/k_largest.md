@@ -5,7 +5,7 @@ Given a binary search tree (BST) and an integer \( k \), write a function to fin
 ### Function Signature
 
 ```python
-def find_k_largest_in_bst(tree: Optional[TreeNode], k: int) -> List[int]:
+def find_k_largest_in_bst(tree, k):
     pass
 ```
 
