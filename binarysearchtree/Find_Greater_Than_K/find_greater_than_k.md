@@ -44,7 +44,7 @@ tree = TreeNode(19,
                          TreeNode(47, TreeNode(37, None, TreeNode(41)), TreeNode(53))))
 
 # Find the first node with value greater than 23
-result = find_first_greater_than_k_wrapper(tree, 23)  # Output: 37
+result = find_first_greater_than_k_wrapper(tree, 23)  # Output: 43
 print(result)
 ```
 
