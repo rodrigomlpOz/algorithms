@@ -43,7 +43,7 @@ def get_minimum_difference(root: Optional[TreeNode]) -> int:
         #Why the Check?: For the first node, there is no previous node to compare with. Attempting to compute node.val - prev when prev is None would result in a TypeError because you cannot perform arithmetic operations between an int and NoneType.
         if prev is not None:
             current_diff = node.val - prev
-            min_diff = min(min_diff, current_diff)
+            min_diff = min(min_diff, abs(current_diff))
         prev = node.val
         # Traverse the right subtree
         in_order(node.right)
