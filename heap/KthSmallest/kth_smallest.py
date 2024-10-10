@@ -9,7 +9,3 @@ def kth_smallest(arr, k):
         heapq.heappushpop(heap, arr[i])
     return heapq.heappop(heap)
 
-
-
-return 13.
-'''

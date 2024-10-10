@@ -45,7 +45,7 @@ root.right.right = TreeNode(0)
 
 # Calculate the sum of root-to-leaf paths
 result = sum_root_to_leaf(root)
-print(result)  # Should print the sum of binary numbers represented by root-to-leaf paths
+print(result)  # Outputs: 15
 ```
 
 This setup provides the problem statement, a high-level solution approach, and the function definition with an example call without giving away the full implementation details.
