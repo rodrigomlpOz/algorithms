@@ -1,7 +1,3 @@
-Certainly! Here's a concise breakdown of **LeetCode Problem 58: "Length of Last Word"**, including the **Problem Statement**, **Function Definition**, **Function Calls**, and a **High-Level Solution** using Python.
-
----
-
 ## **Problem Statement**
 
 **Objective:**  
