@@ -41,7 +41,7 @@ A = [1, 2, 3]
 B = [4, -2, -1]
 C = [5, -1, 1]
 D = [-3, -2, -1]
-print(fourSumCount(A, B, C, D))  # Output: 1
+print(fourSumCount(A, B, C, D))  # Output: 6
 
 # Example 4
 A = [0]
