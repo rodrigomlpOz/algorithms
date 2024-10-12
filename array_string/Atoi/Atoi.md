@@ -18,19 +18,9 @@ Implement the `atoi` function, which converts a string to an integer. The functi
 
 ```python
 def myAtoi(s: str) -> int:
+  pass
 ```
 
-**C++:**
-
-```cpp
-int myAtoi(string s);
-```
-
-**C#:**
-
-```csharp
-public int MyAtoi(string s);
-```
 
 #### Input
 
