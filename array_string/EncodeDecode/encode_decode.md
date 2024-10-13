@@ -3,10 +3,10 @@ You need to design an algorithm to **encode** a list of strings into a single st
 
 ### Function Definitions:
 ```python
-def encode(self, strs: list[str]) -> str:
+def encode(strs: list[str]) -> str:
     # Encodes a list of strings to a single string
 
-def decode(self, s: str) -> list[str]:
+def decode(s: str) -> list[str]:
     # Decodes a single string to a list of strings
 
 # Example 1
