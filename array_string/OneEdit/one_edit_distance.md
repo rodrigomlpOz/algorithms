@@ -42,8 +42,7 @@ def isOneEditDistance(self, s: str, t: str) -> bool:
 ```python
 s = "ab"
 t = "acb"
-sol = Solution()
-print(sol.isOneEditDistance(s, t))  # Output: True
+print(isOneEditDistance(s, t))  # Output: True
 Explanation: We can insert 'c' into s to get t.
 ```
 
