@@ -75,9 +75,9 @@ root3.right.right = TreeNode(4)
 root3.right.right.right = TreeNode(1)
 
 # You can now pass these roots (root1, root2, root3) to maxPathSum once it's implemented:
-# print(maxPathSum(root1))
-# print(maxPathSum(root2))
-# print(maxPathSum(root3))
+# print(maxPathSum(root1)) 6
+# print(maxPathSum(root2)) 42
+# print(maxPathSum(root3)) 48
 
 ```
 
