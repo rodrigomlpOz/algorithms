@@ -5,10 +5,9 @@ Given a preorder traversal of a Binary Search Tree (BST), construct the BST. The
 ### Function Signature
 
 ```python
-from typing import List, Optional
 
 class BinaryTreeNode:
-    def __init__(self, data: int, left: 'BinaryTreeNode' = None, right: 'BinaryTreeNode' = None, size: int = None):
+    def __init__(data, left = None, right = None, size: int = None):
         self.data = data
         self.left = left
         self.right = right
