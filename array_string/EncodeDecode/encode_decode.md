@@ -3,26 +3,22 @@ You need to design an algorithm to **encode** a list of strings into a single st
 
 ### Function Definitions:
 ```python
-class Solution:
-    def encode(self, strs: list[str]) -> str:
-        # Encodes a list of strings to a single string
-    
-    def decode(self, s: str) -> list[str]:
-        # Decodes a single string to a list of strings
+def encode(strs: list[str]) -> str:
+    # Encodes a list of strings to a single string
 
-# Initialize the Solution class
-solution = Solution()
+def decode(s: str) -> list[str]:
+    # Decodes a single string to a list of strings
 
 # Example 1
 input1 = ["neet", "code", "love", "you"]
 print(f"Input: {input1}")
 
 # Encode
-encoded1 = solution.encode(input1)
+encoded1 = encode(input1)
 print(f"Encoded: {encoded1}")
 
 # Decode
-decoded1 = solution.decode(encoded1)
+decoded1 = decode(encoded1)
 print(f"Decoded: {decoded1}\n")
 
 # Example 2
@@ -30,11 +26,11 @@ input2 = ["we", "say", ":", "yes"]
 print(f"Input: {input2}")
 
 # Encode
-encoded2 = solution.encode(input2)
+encoded2 = encode(input2)
 print(f"Encoded: {encoded2}")
 
 # Decode
-decoded2 = solution.decode(encoded2)
+decoded2 = decode(encoded2)
 print(f"Decoded: {decoded2}")
 
 ```

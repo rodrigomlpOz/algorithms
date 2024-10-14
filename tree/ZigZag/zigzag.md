@@ -5,7 +5,6 @@ Given a binary tree, return the zigzag level order traversal of its nodes' value
 Here's the function signature for the problem in Python:
 
 ```python
-from typing import List
 import collections
 
 class TreeNode:
@@ -13,10 +12,8 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-
-class Solution:
-    def zigzagLevelOrder(self, root: TreeNode) -> List[List[int]]:
-        # Implementation here
+def zigzagLevelOrder(root: TreeNode):
+    pass
 ```
 
 ### High-Level Approach
@@ -43,8 +40,7 @@ root.right.left = TreeNode(15)
 root.right.right = TreeNode(7)
 
 # Zigzag level order traversal
-sol = Solution()
-result = sol.zigzagLevelOrder(root)
+result = zigzagLevelOrder(root)
 print(result)  # Expected output: [[3], [20, 9], [15, 7]]
 ```
 

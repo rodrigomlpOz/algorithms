@@ -19,6 +19,10 @@ def trim_spaces(s):
     while left <= right:
         if s[left] != ' ':
             output.append(s[left])
+        #This condition is checked when s[left] is a space (' ').
+        # The condition output[-1] != ' ' checks whether the last character added to output is not a space. In other words, it ensures that no consecutive spaces are added to the output.
+        # If the last character in output is not a space, this means the current space is the first space between words, and it should be added to output.
+        # If the last character in output is already a space, it means we've encountered multiple spaces, and we skip adding this space, preventing consecutive spaces in the output.
         elif output[-1] != ' ':
             output.append(s[left])
         left += 1

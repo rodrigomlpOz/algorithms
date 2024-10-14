@@ -8,9 +8,9 @@ An **edit distance** between two strings is defined as:
 
 ### Function Definition:
 ```python
-class Solution:
-    def isOneEditDistance(self, s: str, t: str) -> bool:
-        # Function to determine if two strings are one edit distance apart
+def isOneEditDistance(s: str, t: str) -> bool:
+    # Function to determine if two strings are one edit distance apart
+    pass
 ```
 
 ### Approach:
@@ -42,8 +42,7 @@ class Solution:
 ```python
 s = "ab"
 t = "acb"
-sol = Solution()
-print(sol.isOneEditDistance(s, t))  # Output: True
+print(isOneEditDistance(s, t))  # Output: True
 Explanation: We can insert 'c' into s to get t.
 ```
 
