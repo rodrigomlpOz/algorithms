@@ -6,7 +6,7 @@ Given a binary tree, print its boundary nodes in an anti-clockwise direction sta
 
 - A binary tree with nodes having the following structure:
 
-  ```python
+```python
 class Node:
     def __init__(self, data):
         self.data = data
