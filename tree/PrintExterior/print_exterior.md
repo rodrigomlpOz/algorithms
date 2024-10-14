@@ -7,11 +7,30 @@ Given a binary tree, print its boundary nodes in an anti-clockwise direction sta
 - A binary tree with nodes having the following structure:
 
   ```python
-  class Node:
-      def __init__(self, data):
-          self.data = data
-          self.left = None
-          self.right = None
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+# Function signature for printExterior
+def printExterior(root):
+    # TODO: Implement logic to print the exterior nodes of the tree
+    pass
+
+# Creating the tree based on the provided structure
+root = Node(20)
+root.left = Node(8)
+root.right = Node(22)
+
+root.left.left = Node(4)
+root.left.right = Node(12)
+
+root.left.right.left = Node(10)
+root.left.right.right = Node(14)
+
+root.right.right = Node(25)
+
   ```
 
 - The tree is defined by a root node that provides access to the entire structure.
