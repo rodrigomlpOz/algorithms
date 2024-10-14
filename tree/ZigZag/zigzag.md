@@ -40,8 +40,7 @@ root.right.left = TreeNode(15)
 root.right.right = TreeNode(7)
 
 # Zigzag level order traversal
-sol = Solution()
-result = sol.zigzagLevelOrder(root)
+result = zigzagLevelOrder(root)
 print(result)  # Expected output: [[3], [20, 9], [15, 7]]
 ```
 
