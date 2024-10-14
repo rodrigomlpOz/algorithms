@@ -3,7 +3,7 @@ Given the root of a binary tree, return the values of the nodes that are visible
 
 ### Function Signature
 ```python
-def rightSideView(root: Optional[TreeNode]) -> List[int]:
+def rightSideView(root):
     pass
 ```
 
