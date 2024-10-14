@@ -50,6 +50,35 @@ class TreeNode:
 
 def maxPathSum(root) -> int:
     pass
+
+# Test Tree 1
+root1 = TreeNode(1)
+root1.left = TreeNode(2)
+root1.right = TreeNode(3)
+
+# Test Tree 2
+root2 = TreeNode(-10)
+root2.left = TreeNode(9)
+root2.right = TreeNode(20)
+root2.right.left = TreeNode(15)
+root2.right.right = TreeNode(7)
+
+# Test Tree 3
+root3 = TreeNode(5)
+root3.left = TreeNode(4)
+root3.right = TreeNode(8)
+root3.left.left = TreeNode(11)
+root3.left.left.left = TreeNode(7)
+root3.left.left.right = TreeNode(2)
+root3.right.left = TreeNode(13)
+root3.right.right = TreeNode(4)
+root3.right.right.right = TreeNode(1)
+
+# You can now pass these roots (root1, root2, root3) to maxPathSum once it's implemented:
+# print(maxPathSum(root1))
+# print(maxPathSum(root2))
+# print(maxPathSum(root3))
+
 ```
 
 ### Step-by-Step Explanation:
