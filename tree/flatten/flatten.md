@@ -11,7 +11,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
-def flatten(root: Optional[TreeNode]) -> None:
+def flatten(root):
     # Function to modify the binary tree in-place
     pass
 ```
