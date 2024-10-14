@@ -20,7 +20,4 @@ def connect(root):
         if node1 and node1.right:
             if node1.next:
                 node1.right.next = node1.next.left
-            else:
-                node1.right.next = None
-
             q.append(node1.right)
