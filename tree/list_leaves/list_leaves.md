@@ -5,15 +5,13 @@ Given a binary tree, write a function to create a list of its leaf nodes. A leaf
 ### Function Signature
 
 ```python
-from typing import List, Optional
-
 class TreeNode:
     def __init__(self, val: int = 0, left: 'TreeNode' = None, right: 'TreeNode' = None):
         self.val = val
         self.left = left
         self.right = right
 
-def create_list_of_leaves(tree: Optional[TreeNode]) -> List[TreeNode]:
+def create_list_of_leaves(tree):
     pass
 ```
 
