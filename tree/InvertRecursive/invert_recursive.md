@@ -11,7 +11,8 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-
+def invertTree(root):
+    pass
 # Creating the tree:
 #       4
 #      / \
