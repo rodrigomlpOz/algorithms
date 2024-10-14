@@ -7,6 +7,7 @@ def sum_root_to_leaf(tree):
         if not tree:
             return 0
 
+        #The partial_path_sum is calculated before returning at the leaf node because it accumulates the sum as we traverse down the tree. 
         partial_path_sum = partial_path_sum * 2 + tree.data
         if not tree.left and not tree.right:  # Leaf.
             return partial_path_sum
