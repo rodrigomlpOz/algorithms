@@ -30,8 +30,7 @@ root.left.right.left = Node(10)
 root.left.right.right = Node(14)
 
 root.right.right = Node(25)
-
-  ```
+```
 
 - The tree is defined by a root node that provides access to the entire structure.
 
