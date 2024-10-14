@@ -11,7 +11,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
-def tree_lca(root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+def tree_lca(root, p, q):
     # Implementation here
 ```
 
