@@ -1,6 +1,5 @@
 #EPI 9.10
 def find_successor(node):
-
     if node.right:
         # Successor is the leftmost element in node's right subtree.
         node = node.right

@@ -1,33 +1,33 @@
+# Definition for a binary tree node.
 class TreeNode:
-    def __init__(self, val):
-        self.val = val 
-        self.left = None
-        self.right = None
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
-def height_balanced(root):
-    def check_balance(node):
-        if not node:
-            return 0, True  # A null tree is balanced with height 0
+def invertTree(root):
+    if root is None:
+        return None
+    if not root.left and not root.right:
+        return root
+    root.left = invertTree(root.right)
+    root.right = invertTree(root.left)
+    return root
 
-        left_height, left_balanced = check_balance(node.left)
-        right_height, right_balanced = check_balance(node.right)
+# Creating the tree:
+#       4
+#      / \
+#     2   7
+#    / \ / \
+#   1  3 6  9
 
-        # The current node is balanced if the left and right subtrees are balanced
-        # and the difference in their heights is not more than 1
-        current_balanced = left_balanced and right_balanced and abs(left_height - right_height) <= 1
-        current_height = 1 + max(left_height, right_height)
+root = TreeNode(4)
+root.left = TreeNode(2)
+root.right = TreeNode(7)
+root.left.left = TreeNode(1)
+root.left.right = TreeNode(3)
+root.right.left = TreeNode(6)
+root.right.right = TreeNode(9)
 
-        return current_height, current_balanced
-
-    _, is_balanced = check_balance(root)
-    return is_balanced
-
-# Example usage
-root = TreeNode(0)
-root.left = TreeNode(-3)
-root.left.left = TreeNode(-10)
-root.right = TreeNode(9)
-root.right.left = TreeNode(5)
-
-result = height_balanced(root)
-print(result)  # Output: True (indicating the tree is balanced)
+# Call invertTree (to be implemented)
+x = invertTree(root)
