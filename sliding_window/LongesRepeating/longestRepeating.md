@@ -9,7 +9,7 @@ You are given a string `s` and an integer `k`. You are allowed to choose any cha
 ```plaintext
 Input: s = "AABABBA", k = 1
 Output: 4
-Explanation: Replace the one 'A' in the middle to get "AABBBBA". The longest substring with all the same characters is 4.
+Explanation: Replace the one 'A' in the middle to get "AAAABBA". The longest substring with all the same characters is 4.
 ```
 
 ### Approach: Sliding Window
