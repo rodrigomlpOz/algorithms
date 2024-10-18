@@ -12,6 +12,8 @@ You are given two sorted arrays. Your goal is to find the intersection of these 
 
 4. **Example Call:**
    ```python
+   def intersection(arr1, arr2):
+      pass
    arr1 = [2, 3, 3, 5, 5, 6, 7, 7, 8, 12]
    arr2 = [5, 5, 6, 8, 8, 9, 10, 10]
    result = intersection(arr1, arr2)
