@@ -73,7 +73,7 @@ print(f"Output: {findMinArrowShots(points4)}")
 points5 = [[1, 10], [2, 3], [4, 8], [5, 6]]
 print(f"Input: {points5}")
 print(f"Output: {findMinArrowShots(points5)}")
-# Expected Output: 1
+# Expected Output: 2
 ```
 
 ### Explanation of the Solution:
