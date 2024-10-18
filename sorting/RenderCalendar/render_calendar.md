@@ -16,6 +16,8 @@ You are given a list of events, where each event is defined by a start time and 
 ### Example Call:
 
 ```python
+def find_max_simultaneous_events(events):
+  pass
 events = [
     (1, 5),
     (2, 7),
