@@ -13,6 +13,9 @@ Given two people’s availability slots (represented as time intervals) and a me
 
 4. **Example Call:**
    ```python
+   def meeting_planner(slotsA, slotsB, dur):
+    pass
+
    slotsA = [[10, 50], [60, 120], [140, 210]]
    slotsB = [[0, 15], [60, 70]]
    dur = 8

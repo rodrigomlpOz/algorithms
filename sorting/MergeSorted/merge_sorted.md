@@ -27,6 +27,65 @@ def intersection(A, m, B, n):
     Returns:
     None. (The result is merged in place into A)
     """
+def test_intersection():
+    # Test case 1: Basic merge with equal length arrays
+    A1 = [1, 3, 5, 0, 0, 0]
+    B1 = [2, 4, 6]
+    m1 = 3
+    n1 = 3
+    print("Test Case 1")
+    print("Before:", A1)
+    intersection(A1, m1, B1, n1)
+    print("After:", A1)
+    print()
+
+    # Test case 2: B is larger than A
+    A2 = [1, 2, 0, 0, 0, 0]
+    B2 = [3, 4, 5, 6]
+    m2 = 2
+    n2 = 4
+    print("Test Case 2")
+    print("Before:", A2)
+    intersection(A2, m2, B2, n2)
+    print("After:", A2)
+    print()
+
+    # Test case 3: A is larger than B
+    A3 = [1, 3, 5, 7, 0, 0]
+    B3 = [2, 6]
+    m3 = 4
+    n3 = 2
+    print("Test Case 3")
+    print("Before:", A3)
+    intersection(A3, m3, B3, n3)
+    print("After:", A3)
+    print()
+
+    # Test case 4: B is empty
+    A4 = [1, 2, 3]
+    B4 = []
+    m4 = 3
+    n4 = 0
+    print("Test Case 4")
+    print("Before:", A4)
+    intersection(A4, m4, B4, n4)
+    print("After:", A4)
+    print()
+
+    # Test case 5: A is empty (only reserved space)
+    A5 = [0, 0, 0]
+    B5 = [1, 2, 3]
+    m5 = 0
+    n5 = 3
+    print("Test Case 5")
+    print("Before:", A5)
+    intersection(A5, m5, B5, n5)
+    print("After:", A5)
+    print()
+
+# Run the tests
+test_intersection()
+
 ```
 
 ### High-Level Implementation
