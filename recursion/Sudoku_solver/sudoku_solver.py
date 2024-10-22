@@ -28,7 +28,7 @@ def solveSudoku(board):
                     for num in '123456789':
                         if isValid(board, row, col, num):
                             board[row][col] = num
-                            # Recursively try to solve the rest of the board
+                            # Recursively try to solve the rest of the board. Current will be skipped, that's why you don't need to move the index.
                             if solve(board):
                                 return True
                             # Backtrack if the solution is not valid
