@@ -19,22 +19,30 @@ Output: [[1]]
 def permutation(arr):
     ans = []
     temp = []
-    def recurse(arr, ans, temp):
+    used = [False] * len(arr)  # Boolean array to track used elements
+
+    def recurse(arr, ans, temp, used):
         if len(temp) == len(arr):
             ans.append(temp[:])
-        for num in arr:
-            if num in temp:
+            return
+
+        for i in range(len(arr)):
+            if used[i]:  # Skip if the element is already used
                 continue
-                
-            temp.append(num)
-            
-            recurse(arr, ans, temp)
 
-            temp.pop()
-    recurse(arr, ans, temp)
+            used[i] = True
+            temp.append(arr[i])
+
+            recurse(arr, ans, temp, used)
+
+            temp.pop()  # Backtrack
+            used[i] = False
+
+    recurse(arr, ans, temp, used)
     return ans
-        
 
-arr = [1,2,3]
+# Example usage
+arr = [1, 2, 3]
 ans = permutation(arr)
 print(ans)
+
