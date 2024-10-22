@@ -5,7 +5,8 @@ Given two integers `n` and `k`, return all possible combinations of `k` numbers 
 **Function Signature:**
 
 ```python
-def power_set(n: int, k: int) -> List[List[int]]:
+def power_set(n: int, k: int):
+   pass
 ```
 
 **Input:**
