@@ -11,6 +11,9 @@ You are given a list of tuples, where each tuple contains a first name and a las
 
 4. **Example Call:**
    ```python
+   def remove_first_name_duplicates(names):
+    pass
+
    names = [("Ian", "Botham"), ("David", "Gower"), ("Ian", "Bell"), ("Ian", "Chappell")]
    result = remove_first_name_duplicates(names)
    # Output: [("David", "Gower"), ("Ian", "Botham")]

@@ -1,4 +1,4 @@
-def countNodes(root: TreeNode) -> int:
+def countNodes(root) -> int:
     # Helper function to compute the depth of the tree
     def get_depth(node):
         depth = 0

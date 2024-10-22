@@ -26,9 +26,6 @@ Explanation: Intervals [1, 4] and [4, 5] are considered overlapping.
 ```python
 def merge(intervals):
     # High-level idea:
-    # 1. Sort intervals by their start values.
-    # 2. Initialize a list for merged intervals.
-    # 3. Iterate over the sorted intervals and merge overlapping intervals.
     pass
 ```
 
